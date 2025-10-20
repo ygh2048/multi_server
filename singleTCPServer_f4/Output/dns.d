@@ -1,9 +1,0 @@
-..\..\output\dns.o: ..\..\User\Ethernet\Application\dns.c
-..\..\output\dns.o: D:\workapp\keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\..\output\dns.o: D:\workapp\keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\..\output\dns.o: ..\..\User\Ethernet\W5500\socket.h
-..\..\output\dns.o: ..\..\User\Ethernet\W5500\wizchip_conf.h
-..\..\output\dns.o: D:\workapp\keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-..\..\output\dns.o: ..\..\User\Ethernet\W5500\w5500.h
-..\..\output\dns.o: ..\..\User\Ethernet\W5500\wizchip_conf.h
-..\..\output\dns.o: ..\..\User\Ethernet\Application\dns.h

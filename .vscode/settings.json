@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "socket.h": "c"
+        "socket.h": "c",
+        "sys.h": "c",
+        "stm32f4xx.h": "c",
+        "w5500.h": "c"
     }
 }
