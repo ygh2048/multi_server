@@ -56,3 +56,10 @@
 ..\obj\task_tcp.o: ..\HARDWARE\wiz_interface\wiz_interface.h
 ..\obj\task_tcp.o: ..\HARDWARE\tcp_server_multi_socket\tcp_server_multi_socket.h
 ..\obj\task_tcp.o: ..\HARDWARE\SPI\spi.h
+..\obj\task_tcp.o: ..\HARDWARE\MOD_TCP_BSP\modtcpbsp.h
+..\obj\task_tcp.o: D:\workapp\keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+..\obj\task_tcp.o: ..\modbus\include\mb.h
+..\obj\task_tcp.o: ..\modbus\port\port.h
+..\obj\task_tcp.o: ..\modbus\include\mbport.h
+..\obj\task_tcp.o: ..\modbus\include\mbproto.h
+..\obj\task_tcp.o: ..\HARDWARE\MOD_TCP_BSP\mb_user_reg.h

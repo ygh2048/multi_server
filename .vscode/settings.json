@@ -1,5 +1,14 @@
 {
     "files.associations": {
-        "task_tcp.h": "c"
+        "task_tcp.h": "c",
+        "mb.h": "c",
+        "port.h": "c",
+        "sys.h": "c",
+        "wizchip_conf.h": "c",
+        "tcp_server_multi_socket.h": "c",
+        "modtcpbsp.h": "c",
+        "wiz_platform.h": "c",
+        "w5500.h": "c",
+        "device.h": "c"
     }
 }

@@ -86,4 +86,15 @@ void wiz_tim_irq_enable(void);
  * @return  none
  */
 void wiz_tim_irq_disable(void);
+
+
+void wizchip_write_byte(uint8_t dat);
+uint8_t wizchip_read_byte(void);
+
+
+
+
+
+
+
 #endif

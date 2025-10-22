@@ -250,23 +250,9 @@ void wizchip_deselect(void)
     GPIO_SetBits(WIZ_SCS_PORT, WIZ_SCS_PIN);
 }
 
-void wizchip_write_byte(uint8_t dat)
-{
-    while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET) {}
-    SPI_I2S_SendData(SPI2, (uint16_t)dat);      // 8bit ???????8?
+void wizchip_write_byte(uint8_t dat) { (void)SPI2_ReadWriteByte(dat); }
+uint8_t wizchip_read_byte(void)      { return SPI2_ReadWriteByte(0xFF); }
 
-    while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET) {}
-    (void)SPI_I2S_ReceiveData(SPI2);            // ????RXNE,??
-}
-
-uint8_t wizchip_read_byte(void)
-{
-    while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET) {}
-    SPI_I2S_SendData(SPI2, 0xFF);               // dummy 0xFF(??0xFFFF)
-
-    while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET) {}
-    return (uint8_t)SPI_I2S_ReceiveData(SPI2);
-}
 
 
 /**

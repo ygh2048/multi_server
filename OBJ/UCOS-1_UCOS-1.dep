@@ -1,5 +1,5 @@
 Dependencies for Project 'UCOS-1', Target 'UCOS-1': (DO NOT MODIFY !)
-F (.\main.c)(0x68F5FBA5)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x68F5FBA5)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (task_tcp.h)(0x68F5F604)
 I (..\SYSTEM\sys\sys.h)(0x5710F45E)
 I (..\USER\stm32f4xx.h)(0x5710F461)
@@ -48,8 +48,8 @@ I (D:\workapp\keil_v5\ARM\ARMCC\include\stdarg.h)(0x5CEB79E4)
 I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\os_cfg.h)(0x5710F460)
 I (..\UCOSII\PORT\os_cpu.h)(0x5710F460)
-I (..\HARDWARE\wiz_platform\wiz_platform.h)(0x68F5F9A1)
-F (.\stm32f4xx_it.c)(0x5710F461)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_it.o --omf_browse ..\obj\stm32f4xx_it.crf --depend ..\obj\stm32f4xx_it.d)
+I (..\HARDWARE\wiz_platform\wiz_platform.h)(0x68F72E1C)
+F (.\stm32f4xx_it.c)(0x5710F461)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_it.o --omf_browse ..\obj\stm32f4xx_it.crf --depend ..\obj\stm32f4xx_it.d)
 I (stm32f4xx_it.h)(0x5710F461)
 I (stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -86,7 +86,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (.\system_stm32f4xx.c)(0x5710F461)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\system_stm32f4xx.o --omf_browse ..\obj\system_stm32f4xx.crf --depend ..\obj\system_stm32f4xx.d)
+F (.\system_stm32f4xx.c)(0x5710F461)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\system_stm32f4xx.o --omf_browse ..\obj\system_stm32f4xx.crf --depend ..\obj\system_stm32f4xx.d)
 I (stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
@@ -122,7 +122,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (.\task_tcp.c)(0x68F6031F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\task_tcp.o --omf_browse ..\obj\task_tcp.crf --depend ..\obj\task_tcp.d)
+F (.\task_tcp.c)(0x68F752A0)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\task_tcp.o --omf_browse ..\obj\task_tcp.crf --depend ..\obj\task_tcp.d)
 I (task_tcp.h)(0x68F5F604)
 I (..\SYSTEM\sys\sys.h)(0x5710F45E)
 I (..\USER\stm32f4xx.h)(0x5710F461)
@@ -171,14 +171,21 @@ I (D:\workapp\keil_v5\ARM\ARMCC\include\stdarg.h)(0x5CEB79E4)
 I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\os_cfg.h)(0x5710F460)
 I (..\UCOSII\PORT\os_cpu.h)(0x5710F460)
-I (..\HARDWARE\wiz_platform\wiz_platform.h)(0x68F5F9A1)
+I (..\HARDWARE\wiz_platform\wiz_platform.h)(0x68F72E1C)
 I (..\ioLibrary_Driver\Ethernet\wizchip_conf.h)(0x68F5FFAA)
 I (..\ioLibrary_Driver\Ethernet\W5500/w5500.h)(0x67D3D935)
 I (..\HARDWARE\wiz_interface\wiz_interface.h)(0x67D3D935)
 I (..\HARDWARE\tcp_server_multi_socket\tcp_server_multi_socket.h)(0x67D3D935)
 I (..\HARDWARE\SPI\spi.h)(0x68F5ECC6)
+I (..\HARDWARE\MOD_TCP_BSP\modtcpbsp.h)(0x68F70533)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEB79E2)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\HARDWARE\MOD_TCP_BSP\mb_user_reg.h)(0x68F740D5)
 F (.\task_tcp.h)(0x68F5F604)()
-F (..\HARDWARE\LED\led.c)(0x5710F385)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
+F (..\HARDWARE\LED\led.c)(0x5710F385)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
 I (..\HARDWARE\LED\led.h)(0x5710F385)
 I (..\SYSTEM\sys\sys.h)(0x5710F45E)
 I (..\USER\stm32f4xx.h)(0x5710F461)
@@ -215,7 +222,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\HARDWARE\TIMER\timer.c)(0x68F5E650)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
+F (..\HARDWARE\TIMER\timer.c)(0x68F5E650)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
 I (..\HARDWARE\TIMER\timer.h)(0x68F5E659)
 I (..\SYSTEM\sys\sys.h)(0x5710F45E)
 I (..\USER\stm32f4xx.h)(0x5710F461)
@@ -253,7 +260,7 @@ I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
 I (..\HARDWARE\LED\led.h)(0x5710F385)
-F (..\HARDWARE\SPI\spi.c)(0x68F5EB4D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\spi.o --omf_browse ..\obj\spi.crf --depend ..\obj\spi.d)
+F (..\HARDWARE\SPI\spi.c)(0x68F72C30)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\spi.o --omf_browse ..\obj\spi.crf --depend ..\obj\spi.d)
 I (..\HARDWARE\SPI\spi.h)(0x68F5ECC6)
 I (..\SYSTEM\sys\sys.h)(0x5710F45E)
 I (..\USER\stm32f4xx.h)(0x5710F461)
@@ -290,8 +297,8 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-I (..\HARDWARE\wiz_platform\wiz_platform.h)(0x68F5F9A1)
-F (..\HARDWARE\LCD\lcd.c)(0x5710F385)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\lcd.o --omf_browse ..\obj\lcd.crf --depend ..\obj\lcd.d)
+I (..\HARDWARE\wiz_platform\wiz_platform.h)(0x68F72E1C)
+F (..\HARDWARE\LCD\lcd.c)(0x5710F385)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\lcd.o --omf_browse ..\obj\lcd.crf --depend ..\obj\lcd.d)
 I (..\HARDWARE\LCD\lcd.h)(0x5710F385)
 I (..\SYSTEM\sys\sys.h)(0x5710F45E)
 I (..\USER\stm32f4xx.h)(0x5710F461)
@@ -333,7 +340,7 @@ I (..\HARDWARE\LCD\font.h)(0x5710F385)
 I (..\SYSTEM\usart\usart.h)(0x5710F45F)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (..\SYSTEM\delay\delay.h)(0x5710F45D)
-F (..\SYSTEM\delay\delay.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
+F (..\SYSTEM\delay\delay.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
 I (..\SYSTEM\delay\delay.h)(0x5710F45D)
 I (..\SYSTEM\sys\sys.h)(0x5710F45E)
 I (..\USER\stm32f4xx.h)(0x5710F461)
@@ -379,7 +386,7 @@ I (D:\workapp\keil_v5\ARM\ARMCC\include\stdarg.h)(0x5CEB79E4)
 I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\os_cfg.h)(0x5710F460)
 I (..\UCOSII\PORT\os_cpu.h)(0x5710F460)
-F (..\SYSTEM\sys\sys.c)(0x5710F45E)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\sys.o --omf_browse ..\obj\sys.crf --depend ..\obj\sys.d)
+F (..\SYSTEM\sys\sys.c)(0x5710F45E)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\sys.o --omf_browse ..\obj\sys.crf --depend ..\obj\sys.d)
 I (..\SYSTEM\sys\sys.h)(0x5710F45E)
 I (..\USER\stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -415,7 +422,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\SYSTEM\usart\usart.c)(0x5710F45F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
+F (..\SYSTEM\usart\usart.c)(0x5710F45F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
 I (..\SYSTEM\sys\sys.h)(0x5710F45E)
 I (..\USER\stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -462,7 +469,7 @@ I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\os_cfg.h)(0x5710F460)
 I (..\UCOSII\PORT\os_cpu.h)(0x5710F460)
 F (..\CORE\startup_stm32f40_41xxx.s)(0x5710F459)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include--pd "__UVISION_VERSION SETA 528" --pd "STM32F407xx SETA 1"--list ..\obj\startup_stm32f40_41xxx.lst --xref -o ..\obj\startup_stm32f40_41xxx.o --depend ..\obj\startup_stm32f40_41xxx.d)
-F (..\FWLIB\src\misc.c)(0x5710F45C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\misc.o --omf_browse ..\obj\misc.crf --depend ..\obj\misc.d)
+F (..\FWLIB\src\misc.c)(0x5710F45C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\misc.o --omf_browse ..\obj\misc.crf --depend ..\obj\misc.d)
 I (..\FWLIB\inc\misc.h)(0x5710F459)
 I (..\USER\stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -497,7 +504,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\FWLIB\src\stm32f4xx_gpio.c)(0x5710F45C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_gpio.o --omf_browse ..\obj\stm32f4xx_gpio.crf --depend ..\obj\stm32f4xx_gpio.d)
+F (..\FWLIB\src\stm32f4xx_gpio.c)(0x5710F45C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_gpio.o --omf_browse ..\obj\stm32f4xx_gpio.crf --depend ..\obj\stm32f4xx_gpio.d)
 I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
 I (..\USER\stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -532,7 +539,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\FWLIB\src\stm32f4xx_rcc.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_rcc.o --omf_browse ..\obj\stm32f4xx_rcc.crf --depend ..\obj\stm32f4xx_rcc.d)
+F (..\FWLIB\src\stm32f4xx_rcc.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_rcc.o --omf_browse ..\obj\stm32f4xx_rcc.crf --depend ..\obj\stm32f4xx_rcc.d)
 I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
 I (..\USER\stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -567,7 +574,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\FWLIB\src\stm32f4xx_syscfg.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_syscfg.o --omf_browse ..\obj\stm32f4xx_syscfg.crf --depend ..\obj\stm32f4xx_syscfg.d)
+F (..\FWLIB\src\stm32f4xx_syscfg.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_syscfg.o --omf_browse ..\obj\stm32f4xx_syscfg.crf --depend ..\obj\stm32f4xx_syscfg.d)
 I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
 I (..\USER\stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -602,7 +609,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\FWLIB\src\stm32f4xx_usart.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_usart.o --omf_browse ..\obj\stm32f4xx_usart.crf --depend ..\obj\stm32f4xx_usart.d)
+F (..\FWLIB\src\stm32f4xx_usart.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_usart.o --omf_browse ..\obj\stm32f4xx_usart.crf --depend ..\obj\stm32f4xx_usart.d)
 I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
 I (..\USER\stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -637,7 +644,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\FWLIB\src\stm32f4xx_dma.c)(0x5710F45C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_dma.o --omf_browse ..\obj\stm32f4xx_dma.crf --depend ..\obj\stm32f4xx_dma.d)
+F (..\FWLIB\src\stm32f4xx_dma.c)(0x5710F45C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_dma.o --omf_browse ..\obj\stm32f4xx_dma.crf --depend ..\obj\stm32f4xx_dma.d)
 I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
 I (..\USER\stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -672,7 +679,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\FWLIB\src\stm32f4xx_spi.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_spi.o --omf_browse ..\obj\stm32f4xx_spi.crf --depend ..\obj\stm32f4xx_spi.d)
+F (..\FWLIB\src\stm32f4xx_spi.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_spi.o --omf_browse ..\obj\stm32f4xx_spi.crf --depend ..\obj\stm32f4xx_spi.d)
 I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
 I (..\USER\stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -707,7 +714,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\FWLIB\src\stm32f4xx_tim.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_tim.o --omf_browse ..\obj\stm32f4xx_tim.crf --depend ..\obj\stm32f4xx_tim.d)
+F (..\FWLIB\src\stm32f4xx_tim.c)(0x5710F45D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_tim.o --omf_browse ..\obj\stm32f4xx_tim.crf --depend ..\obj\stm32f4xx_tim.d)
 I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
 I (..\USER\stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -742,7 +749,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\FWLIB\src\stm32f4xx_fsmc.c)(0x5710F45C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_fsmc.o --omf_browse ..\obj\stm32f4xx_fsmc.crf --depend ..\obj\stm32f4xx_fsmc.d)
+F (..\FWLIB\src\stm32f4xx_fsmc.c)(0x5710F45C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_fsmc.o --omf_browse ..\obj\stm32f4xx_fsmc.crf --depend ..\obj\stm32f4xx_fsmc.d)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
 I (..\USER\stm32f4xx.h)(0x5710F461)
 I (..\CORE\core_cm4.h)(0x5710F459)
@@ -777,7 +784,7 @@ I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
 I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
-F (..\UCOSII\CORE\os_core.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_core.o --omf_browse ..\obj\os_core.crf --depend ..\obj\os_core.d)
+F (..\UCOSII\CORE\os_core.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_core.o --omf_browse ..\obj\os_core.crf --depend ..\obj\os_core.d)
 I (..\UCOSII\CONFIG\includes.h)(0x5710F460)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
@@ -821,7 +828,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\UCOSII\CORE\os_flag.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_flag.o --omf_browse ..\obj\os_flag.crf --depend ..\obj\os_flag.d)
+F (..\UCOSII\CORE\os_flag.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_flag.o --omf_browse ..\obj\os_flag.crf --depend ..\obj\os_flag.d)
 I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\includes.h)(0x5710F460)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
@@ -865,7 +872,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\UCOSII\CORE\os_mbox.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_mbox.o --omf_browse ..\obj\os_mbox.crf --depend ..\obj\os_mbox.d)
+F (..\UCOSII\CORE\os_mbox.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_mbox.o --omf_browse ..\obj\os_mbox.crf --depend ..\obj\os_mbox.d)
 I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\includes.h)(0x5710F460)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
@@ -909,7 +916,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\UCOSII\CORE\os_mem.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_mem.o --omf_browse ..\obj\os_mem.crf --depend ..\obj\os_mem.d)
+F (..\UCOSII\CORE\os_mem.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_mem.o --omf_browse ..\obj\os_mem.crf --depend ..\obj\os_mem.d)
 I (..\UCOSII\CONFIG\includes.h)(0x5710F460)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
@@ -953,7 +960,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\UCOSII\CORE\os_mutex.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_mutex.o --omf_browse ..\obj\os_mutex.crf --depend ..\obj\os_mutex.d)
+F (..\UCOSII\CORE\os_mutex.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_mutex.o --omf_browse ..\obj\os_mutex.crf --depend ..\obj\os_mutex.d)
 I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\includes.h)(0x5710F460)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
@@ -997,7 +1004,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\UCOSII\CORE\os_q.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_q.o --omf_browse ..\obj\os_q.crf --depend ..\obj\os_q.d)
+F (..\UCOSII\CORE\os_q.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_q.o --omf_browse ..\obj\os_q.crf --depend ..\obj\os_q.d)
 I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\includes.h)(0x5710F460)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
@@ -1041,7 +1048,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\UCOSII\CORE\os_sem.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_sem.o --omf_browse ..\obj\os_sem.crf --depend ..\obj\os_sem.d)
+F (..\UCOSII\CORE\os_sem.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_sem.o --omf_browse ..\obj\os_sem.crf --depend ..\obj\os_sem.d)
 I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\includes.h)(0x5710F460)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
@@ -1085,7 +1092,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\UCOSII\CORE\os_task.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_task.o --omf_browse ..\obj\os_task.crf --depend ..\obj\os_task.d)
+F (..\UCOSII\CORE\os_task.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_task.o --omf_browse ..\obj\os_task.crf --depend ..\obj\os_task.d)
 I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\includes.h)(0x5710F460)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
@@ -1129,7 +1136,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\UCOSII\CORE\os_time.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_time.o --omf_browse ..\obj\os_time.crf --depend ..\obj\os_time.d)
+F (..\UCOSII\CORE\os_time.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_time.o --omf_browse ..\obj\os_time.crf --depend ..\obj\os_time.d)
 I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\includes.h)(0x5710F460)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
@@ -1173,7 +1180,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\UCOSII\CORE\os_tmr.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_tmr.o --omf_browse ..\obj\os_tmr.crf --depend ..\obj\os_tmr.d)
+F (..\UCOSII\CORE\os_tmr.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_tmr.o --omf_browse ..\obj\os_tmr.crf --depend ..\obj\os_tmr.d)
 I (..\UCOSII\CORE\ucos_ii.h)(0x5710F460)
 I (..\UCOSII\CONFIG\includes.h)(0x5710F460)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
@@ -1217,7 +1224,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\UCOSII\PORT\os_cpu_c.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_cpu_c.o --omf_browse ..\obj\os_cpu_c.crf --depend ..\obj\os_cpu_c.d)
+F (..\UCOSII\PORT\os_cpu_c.c)(0x5710F460)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\os_cpu_c.o --omf_browse ..\obj\os_cpu_c.crf --depend ..\obj\os_cpu_c.d)
 I (..\UCOSII\CONFIG\includes.h)(0x5710F460)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
@@ -1265,11 +1272,11 @@ F (..\UCOSII\PORT\os_cpu_a.asm)(0x5710F460)(--cpu Cortex-M4.fp -g --apcs=interwo
 F (..\UCOSII\PORT\os_cpu.h)(0x5710F460)()
 F (..\UCOSII\CONFIG\includes.h)(0x5710F460)()
 F (..\UCOSII\CONFIG\os_cfg.h)(0x5710F460)()
-F (..\readme.txt)(0x5710F461)()
-F (..\HARDWARE\wiz_platform\wiz_platform.c)(0x68F60317)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\wiz_platform.o --omf_browse ..\obj\wiz_platform.crf --depend ..\obj\wiz_platform.d)
+F (..\readme.txt)(0x68F6467D)()
+F (..\HARDWARE\wiz_platform\wiz_platform.c)(0x68F72DDB)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\wiz_platform.o --omf_browse ..\obj\wiz_platform.crf --depend ..\obj\wiz_platform.d)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
-I (..\HARDWARE\wiz_platform\wiz_platform.h)(0x68F5F9A1)
+I (..\HARDWARE\wiz_platform\wiz_platform.h)(0x68F72E1C)
 I (..\ioLibrary_Driver\Ethernet\wizchip_conf.h)(0x68F5FFAA)
 I (..\ioLibrary_Driver\Ethernet\W5500/w5500.h)(0x67D3D935)
 I (..\HARDWARE\wiz_interface\wiz_interface.h)(0x67D3D935)
@@ -1320,12 +1327,12 @@ I (..\SYSTEM\sys\sys.h)(0x5710F45E)
 I (..\SYSTEM\delay\delay.h)(0x5710F45D)
 I (..\HARDWARE\TIMER\timer.h)(0x68F5E659)
 I (..\HARDWARE\SPI\spi.h)(0x68F5ECC6)
-F (..\HARDWARE\wiz_interface\wiz_interface.c)(0x68F5E6CB)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\wiz_interface.o --omf_browse ..\obj\wiz_interface.crf --depend ..\obj\wiz_interface.d)
+F (..\HARDWARE\wiz_interface\wiz_interface.c)(0x68F5E6CB)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\wiz_interface.o --omf_browse ..\obj\wiz_interface.crf --depend ..\obj\wiz_interface.d)
 I (..\HARDWARE\wiz_interface\wiz_interface.h)(0x67D3D935)
 I (..\ioLibrary_Driver\Ethernet\wizchip_conf.h)(0x68F5FFAA)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
 I (..\ioLibrary_Driver\Ethernet\W5500/w5500.h)(0x67D3D935)
-I (..\HARDWARE\wiz_platform\wiz_platform.h)(0x68F5F9A1)
+I (..\HARDWARE\wiz_platform\wiz_platform.h)(0x68F72E1C)
 I (..\ioLibrary_Driver\Internet\DHCP\dhcp.h)(0x67D3D935)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
@@ -1365,7 +1372,7 @@ I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
 I (..\SYSTEM\delay\delay.h)(0x5710F45D)
-F (..\HARDWARE\tcp_server_multi_socket\tcp_server_multi_socket.c)(0x68F60038)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\tcp_server_multi_socket.o --omf_browse ..\obj\tcp_server_multi_socket.crf --depend ..\obj\tcp_server_multi_socket.d)
+F (..\HARDWARE\tcp_server_multi_socket\tcp_server_multi_socket.c)(0x68F6F9C6)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\tcp_server_multi_socket.o --omf_browse ..\obj\tcp_server_multi_socket.crf --depend ..\obj\tcp_server_multi_socket.d)
 I (..\HARDWARE\tcp_server_multi_socket\tcp_server_multi_socket.h)(0x67D3D935)
 I (..\ioLibrary_Driver\Ethernet\wizchip_conf.h)(0x68F5FFAA)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
@@ -1406,7 +1413,7 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
-F (..\ioLibrary_Driver\Application\loopback\loopback.c)(0x67D3D935)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\loopback.o --omf_browse ..\obj\loopback.crf --depend ..\obj\loopback.d)
+F (..\ioLibrary_Driver\Application\loopback\loopback.c)(0x67D3D935)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\loopback.o --omf_browse ..\obj\loopback.crf --depend ..\obj\loopback.d)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
 I (..\ioLibrary_Driver\Application\loopback\loopback.h)(0x67D3D935)
@@ -1414,24 +1421,679 @@ I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
 I (..\ioLibrary_Driver\Ethernet\socket.h)(0x67D3D935)
 I (..\ioLibrary_Driver\Ethernet\wizchip_conf.h)(0x68F5FFAA)
 I (..\ioLibrary_Driver\Ethernet\W5500/w5500.h)(0x67D3D935)
-F (..\ioLibrary_Driver\Ethernet\socket.c)(0x67D3D935)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\socket.o --omf_browse ..\obj\socket.crf --depend ..\obj\socket.d)
+F (..\ioLibrary_Driver\Ethernet\socket.c)(0x67D3D935)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\socket.o --omf_browse ..\obj\socket.crf --depend ..\obj\socket.d)
 I (..\ioLibrary_Driver\Ethernet\socket.h)(0x67D3D935)
 I (..\ioLibrary_Driver\Ethernet\wizchip_conf.h)(0x68F5FFAA)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
 I (..\ioLibrary_Driver\Ethernet\W5500/w5500.h)(0x67D3D935)
-F (..\ioLibrary_Driver\Ethernet\wizchip_conf.c)(0x67D3D935)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\wizchip_conf.o --omf_browse ..\obj\wizchip_conf.crf --depend ..\obj\wizchip_conf.d)
+F (..\ioLibrary_Driver\Ethernet\wizchip_conf.c)(0x67D3D935)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\wizchip_conf.o --omf_browse ..\obj\wizchip_conf.crf --depend ..\obj\wizchip_conf.d)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEB79E2)
 I (..\ioLibrary_Driver\Ethernet\wizchip_conf.h)(0x68F5FFAA)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
 I (..\ioLibrary_Driver\Ethernet\W5500/w5500.h)(0x67D3D935)
-F (..\ioLibrary_Driver\Ethernet\W5500\w5500.c)(0x67D3D935)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\w5500.o --omf_browse ..\obj\w5500.crf --depend ..\obj\w5500.d)
+F (..\ioLibrary_Driver\Ethernet\W5500\w5500.c)(0x67D3D935)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\w5500.o --omf_browse ..\obj\w5500.crf --depend ..\obj\w5500.d)
 I (..\ioLibrary_Driver\Ethernet\W5500\w5500.h)(0x67D3D935)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
 I (..\ioLibrary_Driver\Ethernet\wizchip_conf.h)(0x68F5FFAA)
 I (..\ioLibrary_Driver\Ethernet\W5500/w5500.h)(0x67D3D935)
-F (..\ioLibrary_Driver\Internet\DHCP\dhcp.c)(0x67D3D935)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\ioLibrary_Driver\Internet\DHCP -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\dhcp.o --omf_browse ..\obj\dhcp.crf --depend ..\obj\dhcp.d)
+F (..\ioLibrary_Driver\Internet\DHCP\dhcp.c)(0x67D3D935)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\ioLibrary_Driver\Internet\DHCP -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\dhcp.o --omf_browse ..\obj\dhcp.crf --depend ..\obj\dhcp.d)
 I (..\ioLibrary_Driver\Ethernet\socket.h)(0x67D3D935)
 I (..\ioLibrary_Driver\Ethernet\wizchip_conf.h)(0x68F5FFAA)
 I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
 I (..\ioLibrary_Driver\Ethernet\W5500/w5500.h)(0x67D3D935)
 I (..\ioLibrary_Driver\Internet\DHCP\dhcp.h)(0x67D3D935)
+F (..\HARDWARE\MOD_TCP_BSP\modtcpbsp.c)(0x68F6F06B)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\modtcpbsp.o --omf_browse ..\obj\modtcpbsp.crf --depend ..\obj\modtcpbsp.d)
+I (..\HARDWARE\MOD_TCP_BSP\modtcpbsp.h)(0x68F70533)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (..\HARDWARE\tcp_server_multi_socket\tcp_server_multi_socket.h)(0x67D3D935)
+I (..\ioLibrary_Driver\Ethernet\wizchip_conf.h)(0x68F5FFAA)
+I (..\ioLibrary_Driver\Ethernet\W5500/w5500.h)(0x67D3D935)
+I (..\ioLibrary_Driver\Ethernet\socket.h)(0x67D3D935)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+F (..\HARDWARE\MOD_TCP_BSP\mb_user_reg.c)(0x68F74BB6)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mb_user_reg.o --omf_browse ..\obj\mb_user_reg.crf --depend ..\obj\mb_user_reg.d)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\HARDWARE\MOD_TCP_BSP\mb_user_reg.h)(0x68F740D5)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\HARDWARE\LED\led.h)(0x5710F385)
+F (..\HARDWARE\MOD_TCP_BSP\mb_user_reg.h)(0x68F740D5)()
+F (..\modbus\mb.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mb.o --omf_browse ..\obj\mb.crf --depend ..\obj\mb.d)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\modbus\include\mbconfig.h)(0x68F73A0E)
+I (..\modbus\include\mbframe.h)(0x68EEB68F)
+I (..\modbus\include\mbfunc.h)(0x68EEB68F)
+I (..\modbus\tcp\mbtcp.h)(0x68EEB68F)
+F (..\modbus\ascii\mbascii.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mbascii.o --omf_browse ..\obj\mbascii.crf --depend ..\obj\mbascii.d)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\modbus\include\mbconfig.h)(0x68F73A0E)
+I (..\modbus\ascii\mbascii.h)(0x68EEB68F)
+I (..\modbus\include\mbframe.h)(0x68EEB68F)
+I (..\modbus\rtu\mbcrc.h)(0x68EEB68F)
+F (..\modbus\functions\mbfunccoils.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mbfunccoils.o --omf_browse ..\obj\mbfunccoils.crf --depend ..\obj\mbfunccoils.d)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\modbus\include\mbframe.h)(0x68EEB68F)
+I (..\modbus\include\mbconfig.h)(0x68F73A0E)
+F (..\modbus\functions\mbfuncdiag.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mbfuncdiag.o --omf_browse ..\obj\mbfuncdiag.crf --depend ..\obj\mbfuncdiag.d)
+F (..\modbus\functions\mbfuncdisc.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mbfuncdisc.o --omf_browse ..\obj\mbfuncdisc.crf --depend ..\obj\mbfuncdisc.d)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\modbus\include\mbframe.h)(0x68EEB68F)
+I (..\modbus\include\mbconfig.h)(0x68F73A0E)
+F (..\modbus\functions\mbfuncfile.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mbfuncfile.o --omf_browse ..\obj\mbfuncfile.crf --depend ..\obj\mbfuncfile.d)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\modbus\include\mbframe.h)(0x68EEB68F)
+I (..\modbus\include\mbconfig.h)(0x68F73A0E)
+F (..\modbus\functions\mbfuncholding.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mbfuncholding.o --omf_browse ..\obj\mbfuncholding.crf --depend ..\obj\mbfuncholding.d)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\modbus\include\mbframe.h)(0x68EEB68F)
+I (..\modbus\include\mbconfig.h)(0x68F73A0E)
+F (..\modbus\functions\mbfuncinput.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mbfuncinput.o --omf_browse ..\obj\mbfuncinput.crf --depend ..\obj\mbfuncinput.d)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\modbus\include\mbframe.h)(0x68EEB68F)
+I (..\modbus\include\mbconfig.h)(0x68F73A0E)
+F (..\modbus\functions\mbfuncother.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mbfuncother.o --omf_browse ..\obj\mbfuncother.crf --depend ..\obj\mbfuncother.d)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\modbus\include\mbframe.h)(0x68EEB68F)
+I (..\modbus\include\mbconfig.h)(0x68F73A0E)
+F (..\modbus\functions\mbutils.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mbutils.o --omf_browse ..\obj\mbutils.crf --depend ..\obj\mbutils.d)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+F (..\modbus\rtu\mbcrc.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mbcrc.o --omf_browse ..\obj\mbcrc.crf --depend ..\obj\mbcrc.d)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+F (..\modbus\tcp\mbtcp.c)(0x68EEB68F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mbtcp.o --omf_browse ..\obj\mbtcp.crf --depend ..\obj\mbtcp.d)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\modbus\include\mbconfig.h)(0x68F73A0E)
+I (..\modbus\tcp\mbtcp.h)(0x68EEB68F)
+I (..\modbus\include\mbframe.h)(0x68EEB68F)
+F (..\modbus\port\port.h)(0x68F704A7)()
+F (..\modbus\port\portevent.c)(0x58E646B0)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\portevent.o --omf_browse ..\obj\portevent.crf --depend ..\obj\portevent.d)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+F (..\modbus\port\porttcp.c)(0x68F75C6C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\ioLibrary_Driver -I ..\HARDWARE\KEY -I ..\HARDWARE\LCD -I ..\HARDWARE\SPI -I ..\HARDWARE\tcp_server_multi_socket -I ..\HARDWARE\wiz_interface -I ..\HARDWARE\wiz_platform -I ..\ioLibrary_Driver\Ethernet -I ..\ioLibrary_Driver\Application\PING -I ..\ioLibrary_Driver\Ethernet\W5500 -I ..\ioLibrary_Driver\Internet\DHCP -I ..\HARDWARE\TIMER -I ..\ioLibrary_Driver\Application\loopback -I ..\HARDWARE\MOD_TCP_BSP -I ..\modbus -I ..\modbus\ascii -I ..\modbus\functions -I ..\modbus\include -I ..\modbus\rtu -I ..\modbus\tcp -I ..\modbus\port-I.\RTE\_UCOS-1-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\workapp\keil_v5\ARM\CMSIS\Include-ID:\package\keil_v5\Keil\STM32F4xx_DFP\2.7.0\Device\Include-D__UVISION_VERSION="528" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\porttcp.o --omf_browse ..\obj\porttcp.crf --depend ..\obj\porttcp.d)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\modbus\port\port.h)(0x68F704A7)
+I (..\SYSTEM\sys\sys.h)(0x5710F45E)
+I (..\USER\stm32f4xx.h)(0x5710F461)
+I (..\CORE\core_cm4.h)(0x5710F459)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\CORE\core_cmInstr.h)(0x5710F459)
+I (..\CORE\core_cmFunc.h)(0x5710F459)
+I (..\CORE\core_cm4_simd.h)(0x5710F459)
+I (..\USER\system_stm32f4xx.h)(0x5710F461)
+I (..\USER\stm32f4xx_conf.h)(0x5710F461)
+I (..\FWLIB\inc\stm32f4xx_adc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_crc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dbgmcu.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dma.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_exti.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_flash.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_gpio.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_i2c.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_iwdg.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_pwr.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rcc.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rtc.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_sdio.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_spi.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_syscfg.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_tim.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_usart.h)(0x5710F45B)
+I (..\FWLIB\inc\stm32f4xx_wwdg.h)(0x5710F45B)
+I (..\FWLIB\inc\misc.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_cryp.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_hash.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_rng.h)(0x5710F45A)
+I (..\FWLIB\inc\stm32f4xx_can.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5710F459)
+I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5710F459)
+I (..\modbus\include\mb.h)(0x68EEB68F)
+I (..\modbus\include\mbport.h)(0x68EEB68F)
+I (..\modbus\include\mbproto.h)(0x68EEB68F)
+I (..\HARDWARE\MOD_TCP_BSP\modtcpbsp.h)(0x68F70533)
+I (D:\workapp\keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEB79E2)
