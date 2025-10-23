@@ -6,7 +6,6 @@
 #include "mbport.h"
 #include "modtcpbsp.h"  /* tcp_srv_single_* */
 
-#define TCP_DEBUG 1
 #define TCP_DEBUG_PREFIX "[MBTCP-SIMPLE]"
 
 /* Modbus TCP: 7B MBAP + PDU(<=253) -> 单帧最大 ≈ 260B */
@@ -52,17 +51,13 @@ static int mbap_ok_and_total(const UCHAR *h7, USHORT *p_total)
     USHORT pid, len, total;
     pid = (USHORT)((((USHORT)h7[MB_TCP_PID_H]) << 8) | (USHORT)h7[MB_TCP_PID_L]);
     if (pid != 0) {
-#if TCP_DEBUG
-        printf("%s PID invalid: 0x%04X\r\n", TCP_DEBUG_PREFIX, (unsigned)pid);
-#endif
+        MODTCP_DBG(1, "%s PID invalid: 0x%04X\r\n", TCP_DEBUG_PREFIX, (unsigned)pid);
         return 0;
     }
     len = (USHORT)((((USHORT)h7[MB_TCP_LEN_H]) << 8) | (USHORT)h7[MB_TCP_LEN_L]);
     /* len 至少包含1字节 UnitId；且 6+len 不得超过单帧上限 */
     if (len < 1U || (USHORT)(6U + len) > MB_TCP_FRAME_MAX) {
-#if TCP_DEBUG
-        printf("%s LEN invalid: %u\r\n", TCP_DEBUG_PREFIX, (unsigned)len);
-#endif
+        MODTCP_DBG(1, "%s LEN invalid: %u\r\n", TCP_DEBUG_PREFIX, (unsigned)len);
         return 0;
     }
     total = (USHORT)(6U + len);
@@ -93,10 +88,8 @@ static void pump_tcp_to_acc(void)
 
             /* 防御性处理：空间不足则丢弃该 socket 的累加缓冲 */
             if ((USHORT)(s_acc_len[sn] + got) > (USHORT)sizeof(s_acc[sn])) {
-#if TCP_DEBUG
-                printf("%s sock%u ACC overflow -> reset (acc=%u, got=%u)\r\n",
-                       TCP_DEBUG_PREFIX, (unsigned)sn, (unsigned)s_acc_len[sn], (unsigned)got);
-#endif
+          MODTCP_DBG(1, "%s sock%u ACC overflow -> reset (acc=%u, got=%u)\r\n",
+                 TCP_DEBUG_PREFIX, (unsigned)sn, (unsigned)s_acc_len[sn], (unsigned)got);
                 s_acc_len[sn] = 0U;
             }
 
@@ -119,10 +112,8 @@ static void pump_tcp_to_acc(void)
 
             /* 空间不够就清空累加缓冲（防御式处理，宁可丢数据不崩溃） */
             if ((USHORT)(s_acc_len + got) > MB_TCP_ACC_SIZE) {
-#if TCP_DEBUG
-                printf("%s ACC overflow -> reset (acc=%u, got=%u)\r\n",
-                       TCP_DEBUG_PREFIX, (unsigned)s_acc_len, (unsigned)got);
-#endif
+         MODTCP_DBG(1, "%s ACC overflow -> reset (acc=%u, got=%u)\r\n",
+             TCP_DEBUG_PREFIX, (unsigned)s_acc_len, (unsigned)got);
                 s_acc_len = 0U;
                 s_frame_ready = 0U;
             }
@@ -166,13 +157,11 @@ static void try_extract_frames(void)
         s_frame_sock  = sid;
         s_frame_ready = 1U;
 
-#if TCP_DEBUG
-        { USHORT i, show = (total > 32U) ? 32U : total;
-          printf("%s sock%u FRAME READY %uB: ", TCP_DEBUG_PREFIX, (unsigned)sid, (unsigned)total);
-          for (i = 0; i < show; i++) printf("%02X ", (unsigned)ucTCPBuf[i]);
-          printf("\r\n");
-        }
-#endif
+                MODTCP_DBG(2, "%s sock%u FRAME READY %uB: ", TCP_DEBUG_PREFIX, (unsigned)sid, (unsigned)total);
+                { USHORT i, show = (total > 32U) ? 32U : total;
+                    for (i = 0; i < show; i++) MODTCP_DBG(2, "%02X ", (unsigned)ucTCPBuf[i]);
+                    MODTCP_DBG(2, "\r\n");
+                }
 
         /* 移除这帧 */
         if (s_acc_len[sid] > total) {
@@ -206,13 +195,11 @@ static void try_extract_frames(void)
         usTCPBufLen   = total;
         s_frame_ready = 1U;
 
-#if TCP_DEBUG
-        { USHORT i, show = (total > 32U) ? 32U : total;
-          printf("%s FRAME READY %uB: ", TCP_DEBUG_PREFIX, (unsigned)total);
-          for (i = 0; i < show; i++) printf("%02X ", (unsigned)ucTCPBuf[i]);
-          printf("\r\n");
-        }
-#endif
+                MODTCP_DBG(2, "%s FRAME READY %uB: ", TCP_DEBUG_PREFIX, (unsigned)total);
+                { USHORT i, show = (total > 32U) ? 32U : total;
+                    for (i = 0; i < show; i++) MODTCP_DBG(2, "%02X ", (unsigned)ucTCPBuf[i]);
+                    MODTCP_DBG(2, "\r\n");
+                }
 
         /* 从累加缓冲中移除这帧 */
         if (s_acc_len > total) {
@@ -233,9 +220,7 @@ BOOL xMBTCPPortInit(USHORT usTCPPort)
 {
     USHORT port = (usTCPPort == 0U) ? (USHORT)502 : usTCPPort;
 
-#if TCP_DEBUG
-    printf("%s PortInit: %u\r\n", TCP_DEBUG_PREFIX, (unsigned)port);
-#endif
+    TCP_DBG("%s PortInit: %u\r\n", TCP_DEBUG_PREFIX, (unsigned)port);
 
 #ifdef TCP_MULTI_CONNECTION_MODE
     tcp_srv_init(port);
@@ -255,9 +240,7 @@ BOOL xMBTCPPortInit(USHORT usTCPPort)
 
 void vMBTCPPortClose(void)
 {
-#if TCP_DEBUG
-    printf("%s PortClose\r\n", TCP_DEBUG_PREFIX);
-#endif
+    TCP_DBG("%s PortClose\r\n", TCP_DEBUG_PREFIX);
 #ifdef TCP_MULTI_CONNECTION_MODE
     tcp_srv_deinit();
     memset(s_acc_len, 0, sizeof(s_acc_len));
@@ -273,9 +256,7 @@ void vMBTCPPortClose(void)
 
 void vMBTCPPortDisable(void)
 {
-#if TCP_DEBUG
-    printf("%s PortDisable\r\n", TCP_DEBUG_PREFIX);
-#endif
+    TCP_DBG("%s PortDisable\r\n", TCP_DEBUG_PREFIX);
 #ifdef TCP_MULTI_CONNECTION_MODE
     tcp_srv_close_all();
     memset(s_acc_len, 0, sizeof(s_acc_len));
@@ -319,9 +300,7 @@ BOOL xMBTCPPortGetRequest(UCHAR **ppucMBTCPFrame, USHORT *usTCPLength)
 BOOL xMBTCPPortSendResponse(const UCHAR *pucMBTCPFrame, USHORT usTCPLength)
 {
     int ret;
-#if TCP_DEBUG
-    printf("%s SEND %uB\r\n", TCP_DEBUG_PREFIX, (unsigned)usTCPLength);
-#endif
+    TCP_DBG("%s SEND %uB\r\n", TCP_DEBUG_PREFIX, (unsigned)usTCPLength);
 #ifdef TCP_MULTI_CONNECTION_MODE
     ret = tcp_srv_send(s_frame_sock, pucMBTCPFrame, usTCPLength);
 #else

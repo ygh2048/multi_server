@@ -57,7 +57,6 @@ void tcp_task(void *pdata)
 }
 */
 
-static uint8_t rxbuf[TCP_RX_MAX];
 
 
 void tcp_task(void *pdata)
@@ -112,31 +111,32 @@ void tcp_task(void *pdata)
         /* 每2秒输出一次详细状态 */
         if (current_time - last_debug_time > 1000) {
             last_debug_time = current_time;
-            
-            printf("[DEBUG] === Modbus TCP Status ===\r\n");
-            printf("[DEBUG] Poll count: %lu, eMBPoll result: %d\r\n", poll_count, eStatus);
-            printf("[DEBUG] TCP Connected: %s, RX Buffer: %u/%u bytes\r\n", 
-                   tcp_srv_single_is_connected() ? "Yes" : "No",
-                   tcp_srv_single_get_rx_buffer_usage(),
-                   tcp_srv_single_get_rx_buffer_size());
-            
-            /* 输出TCP socket状态 */
-            printf("[DEBUG] Socket state: ");
+
+            /* Use level-2 debug for verbose periodic status to avoid flooding when level is low */
+            MODTCP_DBG(2, "[DEBUG] === Modbus TCP Status ===\r\n");
+            MODTCP_DBG(2, "[DEBUG] Poll count: %lu, eMBPoll result: %d\r\n", poll_count, eStatus);
+            MODTCP_DBG(2, "[DEBUG] TCP Connected: %s, RX Buffer: %u/%u bytes\r\n",
+                      tcp_srv_single_is_connected() ? "Yes" : "No",
+                      tcp_srv_single_get_rx_buffer_usage(),
+                      tcp_srv_single_get_rx_buffer_size());
+
+            /* 输出TCP socket状态 (level 2) */
+            MODTCP_DBG(2, "[DEBUG] Socket state: ");
             switch(getSn_SR(0)) {
-                case SOCK_CLOSED: printf("CLOSED"); break;
-                case SOCK_INIT: printf("INIT"); break;
-                case SOCK_LISTEN: printf("LISTEN"); break;
-                case SOCK_ESTABLISHED: printf("ESTABLISHED"); break;
-                case SOCK_CLOSE_WAIT: printf("CLOSE_WAIT"); break;
-                default: printf("UNKNOWN(%u)", getSn_SR(0)); break;
+                case SOCK_CLOSED: MODTCP_DBG(2, "CLOSED"); break;
+                case SOCK_INIT: MODTCP_DBG(2, "INIT"); break;
+                case SOCK_LISTEN: MODTCP_DBG(2, "LISTEN"); break;
+                case SOCK_ESTABLISHED: MODTCP_DBG(2, "ESTABLISHED"); break;
+                case SOCK_CLOSE_WAIT: MODTCP_DBG(2, "CLOSE_WAIT"); break;
+                default: MODTCP_DBG(2, "UNKNOWN(%u)", getSn_SR(0)); break;
             }
-            printf("\r\n");
-            
+            MODTCP_DBG(2, "\r\n");
+
             /* 输出TCP接收缓冲区状态 */
             rx_rsr = getSn_RX_RSR(0);
             rx_rd = getSn_RX_RD(0);
-            printf("[DEBUG] TCP HW Buffer: RSR=%u, RD=%u\r\n", rx_rsr, rx_rd);
-            printf("[DEBUG] ============================\r\n");
+            MODTCP_DBG(2, "[DEBUG] TCP HW Buffer: RSR=%u, RD=%u\r\n", rx_rsr, rx_rd);
+            MODTCP_DBG(2, "[DEBUG] ============================\r\n");
         }
 
         delay_ms(1);
