@@ -1,17 +1,11 @@
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\workapp\keil_v5\ARM\ARMCC\Bin'
 Build target 'UCOS-1'
-compiling porttcp.c...
-..\modbus\port\porttcp.c(152): error:  #254: type name is not allowed
-      for (uint8_t sid = 0; sid < TCP_MAX_SOCK; sid++) {
-..\modbus\port\porttcp.c(152): error:  #65: expected a ";"
-      for (uint8_t sid = 0; sid < TCP_MAX_SOCK; sid++) {
-..\modbus\port\porttcp.c(152): error:  #20: identifier "sid" is undefined
-      for (uint8_t sid = 0; sid < TCP_MAX_SOCK; sid++) {
-..\modbus\port\porttcp.c: 0 warnings, 3 errors
 compiling modtcpbsp.c...
 ..\HARDWARE\MOD_TCP_BSP\modtcpbsp.c(34): warning:  #177-D: variable "s_listen_sn"  was declared but never referenced
   static uint8_t          s_listen_sn = 0;        /* 监听socket固定�?0 */
 ..\HARDWARE\MOD_TCP_BSP\modtcpbsp.c: 1 warning, 0 errors
-"..\OBJ\UCOS-1.axf" - 3 Error(s), 1 Warning(s).
-Target not created.
+linking...
+Program Size: Code=42336 RO-data=1020 RW-data=536 ZI-data=10920  
+FromELF: creating hex file...
+"..\OBJ\UCOS-1.axf" - 0 Error(s), 1 Warning(s).
 Build Time Elapsed:  00:00:02

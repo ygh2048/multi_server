@@ -10,18 +10,32 @@
 
 /* ================= 调试开关（直接 printf 到串口） ================= */
 /* 0: 关闭; 1: 基本日志; 2: 详细日志 */
-#ifndef TCP_MULTI_DEBUG
-#define TCP_MULTI_DEBUG 1
-
-#define  TCP_SINGLE_DEBUG 1
+/* Central debug control for Modbus-TCP BSP
+   - MODTCP_DEBUG: 0=off, 1=on
+   - MODTCP_DEBUG_LEVEL: integer level (1=basic, 2=verbose)
+*/
+#ifndef MODTCP_DEBUG
+#define MODTCP_DEBUG 1
+#endif
+#ifndef MODTCP_DEBUG_LEVEL
+#define MODTCP_DEBUG_LEVEL 1
 #endif
 
-#if TCP_MULTI_DEBUG
-  #include <stdio.h>
-  #define TCP_DBG(...)  printf(__VA_ARGS__)
+#if MODTCP_DEBUG
+#include <stdio.h>
+#define MODTCP_DBG(level, ...) do { if ((level) <= MODTCP_DEBUG_LEVEL) printf(__VA_ARGS__); } while(0)
 #else
-  #define TCP_DBG(...)  ((void)0)
+#define MODTCP_DBG(level, ...) ((void)0)
 #endif
+
+/* Backwards compatibility aliases used across existing code */
+#ifndef TCP_MULTI_DEBUG
+#define TCP_MULTI_DEBUG MODTCP_DEBUG
+#endif
+#ifndef TCP_SINGLE_DEBUG
+#define TCP_SINGLE_DEBUG MODTCP_DEBUG
+#endif
+#define TCP_DBG(...) MODTCP_DBG(1, __VA_ARGS__)
 /* ================================================================= */
 
 /* ================= 可配置参数 ================= */

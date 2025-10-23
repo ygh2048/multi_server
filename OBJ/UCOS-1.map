@@ -198,11 +198,9 @@ Section Cross References
     modtcpbsp.o(.text) refers to noretval__2printf.o(.text) for __2printf
     modtcpbsp.o(.text) refers to wizchip_conf.o(.text) for ctlwizchip
     modtcpbsp.o(.text) refers to socket.o(.text) for close
-    modtcpbsp.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
-    modtcpbsp.o(.text) refers to rt_memmove_v6.o(.text) for __aeabi_memmove
     modtcpbsp.o(.text) refers to modtcpbsp.o(.bss) for s_ctx
     modtcpbsp.o(.text) refers to modtcpbsp.o(.data) for s_ka_5s
-    modtcpbsp.o(.text) refers to modtcpbsp.o(.conststring) for .conststring
+    modtcpbsp.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
     mb_user_reg.o(.text) refers to porttcp.o(.text) for EnterCriticalSection
     mb_user_reg.o(.text) refers to mb_user_reg.o(.bss) for usRegHoldingBuf
     mb_user_reg.o(.text) refers to mb_user_reg.o(.data) for ucCoilsBuf
@@ -239,7 +237,7 @@ Section Cross References
     porttcp.o(.text) refers to _printf_u.o(.ARM.Collect$$_printf_percent$$0000000A) for _printf_u
     porttcp.o(.text) refers to _printf_dec.o(.text) for _printf_int_dec
     porttcp.o(.text) refers to noretval__2printf.o(.text) for __2printf
-    porttcp.o(.text) refers to modtcpbsp.o(.text) for tcp_srv_single_peek
+    porttcp.o(.text) refers to modtcpbsp.o(.text) for tcp_srv_peek
     porttcp.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
     porttcp.o(.text) refers to rt_memmove_v6.o(.text) for __aeabi_memmove
     porttcp.o(.text) refers to porttcp.o(.data) for s_acc_len
@@ -841,55 +839,54 @@ Image Symbol Table
     .text                                    0x08006d94   Section        0  w5500.o(.text)
     .text                                    0x080071d0   Section        0  dhcp.o(.text)
     .text                                    0x0800838c   Section        0  modtcpbsp.o(.text)
-    apply_keepalive_single                   0x0800838d   Thumb Code    74  modtcpbsp.o(.text)
-    monitor_phy_single                       0x080083d7   Thumb Code   164  modtcpbsp.o(.text)
-    .text                                    0x08008988   Section        0  mb_user_reg.o(.text)
-    .text                                    0x08008edc   Section        0  mb.o(.text)
-    .text                                    0x080091b8   Section        0  mbfunccoils.o(.text)
-    .text                                    0x08009366   Section        0  mbfuncdisc.o(.text)
-    .text                                    0x08009412   Section        0  mbfuncholding.o(.text)
-    .text                                    0x08009624   Section        0  mbfuncinput.o(.text)
-    .text                                    0x080096b0   Section        0  mbfuncother.o(.text)
-    .text                                    0x08009744   Section        0  mbutils.o(.text)
-    .text                                    0x080097f0   Section        0  mbtcp.o(.text)
-    .text                                    0x08009888   Section        0  portevent.o(.text)
-    .text                                    0x080098d0   Section        0  porttcp.o(.text)
-    mbap_ok_and_total                        0x080098d1   Thumb Code    82  porttcp.o(.text)
-    pump_tcp_to_acc                          0x08009923   Thumb Code   256  porttcp.o(.text)
-    try_extract_frames                       0x08009a23   Thumb Code   214  porttcp.o(.text)
-    .text                                    0x08009cd8   Section        2  use_no_semi_2.o(.text)
-    .text                                    0x08009cdc   Section        0  noretval__2printf.o(.text)
-    .text                                    0x08009cf4   Section        0  _printf_pad.o(.text)
-    .text                                    0x08009d42   Section        0  _printf_str.o(.text)
-    .text                                    0x08009d94   Section        0  _printf_dec.o(.text)
-    .text                                    0x08009e0c   Section        0  _printf_hex_int.o(.text)
-    .text                                    0x08009e64   Section        0  __printf_flags_ss_wp.o(.text)
-    .text                                    0x08009fec   Section      138  rt_memcpy_v6.o(.text)
-    .text                                    0x0800a076   Section      132  rt_memmove_v6.o(.text)
-    .text                                    0x0800a0fa   Section        0  heapauxi.o(.text)
-    .text                                    0x0800a100   Section        2  use_no_semi.o(.text)
-    .text                                    0x0800a102   Section        0  _printf_intcommon.o(.text)
-    .text                                    0x0800a1b4   Section        0  _printf_char.o(.text)
-    .text                                    0x0800a1e0   Section        0  _printf_char_file.o(.text)
-    .text                                    0x0800a204   Section      100  rt_memcpy_w.o(.text)
-    .text                                    0x0800a268   Section      122  rt_memmove_w.o(.text)
-    .text                                    0x0800a2e4   Section        0  _printf_char_common.o(.text)
-    _printf_input_char                       0x0800a2e5   Thumb Code    10  _printf_char_common.o(.text)
-    .text                                    0x0800a314   Section        0  ferror.o(.text)
-    .text                                    0x0800a31c   Section       74  sys_stackheap_outer.o(.text)
-    .text                                    0x0800a366   Section        0  exit.o(.text)
-    .text                                    0x0800a378   Section        8  libspace.o(.text)
-    i._is_digit                              0x0800a380   Section        0  __printf_wp.o(i._is_digit)
-    x$fpl$fpinit                             0x0800a38e   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x0800a38e   Number         0  fpinit.o(x$fpl$fpinit)
-    .constdata                               0x0800a398   Section      256  os_core.o(.constdata)
-    .constdata                               0x0800a498   Section       40  _printf_hex_int.o(.constdata)
-    uc_hextab                                0x0800a498   Data          20  _printf_hex_int.o(.constdata)
-    lc_hextab                                0x0800a4ac   Data          20  _printf_hex_int.o(.constdata)
-    .constdata                               0x0800a4c0   Section       17  __printf_flags_ss_wp.o(.constdata)
-    maptable                                 0x0800a4c0   Data          17  __printf_flags_ss_wp.o(.constdata)
-    .conststring                             0x0800a4d4   Section      278  wiz_interface.o(.conststring)
-    .conststring                             0x0800a5ec   Section       67  modtcpbsp.o(.conststring)
+    apply_keepalive                          0x0800838d   Thumb Code    90  modtcpbsp.o(.text)
+    monitor_phy                              0x080083e7   Thumb Code   180  modtcpbsp.o(.text)
+    .text                                    0x08008c58   Section        0  mb_user_reg.o(.text)
+    .text                                    0x080091ac   Section        0  mb.o(.text)
+    .text                                    0x08009488   Section        0  mbfunccoils.o(.text)
+    .text                                    0x08009636   Section        0  mbfuncdisc.o(.text)
+    .text                                    0x080096e2   Section        0  mbfuncholding.o(.text)
+    .text                                    0x080098f4   Section        0  mbfuncinput.o(.text)
+    .text                                    0x08009980   Section        0  mbfuncother.o(.text)
+    .text                                    0x08009a14   Section        0  mbutils.o(.text)
+    .text                                    0x08009ac0   Section        0  mbtcp.o(.text)
+    .text                                    0x08009b58   Section        0  portevent.o(.text)
+    .text                                    0x08009ba0   Section        0  porttcp.o(.text)
+    mbap_ok_and_total                        0x08009ba1   Thumb Code    82  porttcp.o(.text)
+    pump_tcp_to_acc                          0x08009bf3   Thumb Code   254  porttcp.o(.text)
+    try_extract_frames                       0x08009cf1   Thumb Code   330  porttcp.o(.text)
+    .text                                    0x0800a028   Section        2  use_no_semi_2.o(.text)
+    .text                                    0x0800a02c   Section        0  noretval__2printf.o(.text)
+    .text                                    0x0800a044   Section        0  _printf_pad.o(.text)
+    .text                                    0x0800a092   Section        0  _printf_str.o(.text)
+    .text                                    0x0800a0e4   Section        0  _printf_dec.o(.text)
+    .text                                    0x0800a15c   Section        0  _printf_hex_int.o(.text)
+    .text                                    0x0800a1b4   Section        0  __printf_flags_ss_wp.o(.text)
+    .text                                    0x0800a33c   Section      138  rt_memcpy_v6.o(.text)
+    .text                                    0x0800a3c6   Section      132  rt_memmove_v6.o(.text)
+    .text                                    0x0800a44a   Section        0  heapauxi.o(.text)
+    .text                                    0x0800a450   Section        2  use_no_semi.o(.text)
+    .text                                    0x0800a452   Section        0  _printf_intcommon.o(.text)
+    .text                                    0x0800a504   Section        0  _printf_char.o(.text)
+    .text                                    0x0800a530   Section        0  _printf_char_file.o(.text)
+    .text                                    0x0800a554   Section      100  rt_memcpy_w.o(.text)
+    .text                                    0x0800a5b8   Section      122  rt_memmove_w.o(.text)
+    .text                                    0x0800a634   Section        0  _printf_char_common.o(.text)
+    _printf_input_char                       0x0800a635   Thumb Code    10  _printf_char_common.o(.text)
+    .text                                    0x0800a664   Section        0  ferror.o(.text)
+    .text                                    0x0800a66c   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x0800a6b6   Section        0  exit.o(.text)
+    .text                                    0x0800a6c8   Section        8  libspace.o(.text)
+    i._is_digit                              0x0800a6d0   Section        0  __printf_wp.o(i._is_digit)
+    x$fpl$fpinit                             0x0800a6de   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x0800a6de   Number         0  fpinit.o(x$fpl$fpinit)
+    .constdata                               0x0800a6e8   Section      256  os_core.o(.constdata)
+    .constdata                               0x0800a7e8   Section       40  _printf_hex_int.o(.constdata)
+    uc_hextab                                0x0800a7e8   Data          20  _printf_hex_int.o(.constdata)
+    lc_hextab                                0x0800a7fc   Data          20  _printf_hex_int.o(.constdata)
+    .constdata                               0x0800a810   Section       17  __printf_flags_ss_wp.o(.constdata)
+    maptable                                 0x0800a810   Data          17  __printf_flags_ss_wp.o(.constdata)
+    .conststring                             0x0800a824   Section      278  wiz_interface.o(.conststring)
     .data                                    0x20000000   Section       20  system_stm32f4xx.o(.data)
     .data                                    0x20000014   Section       40  task_tcp.o(.data)
     last_debug_time                          0x20000030   Data           4  task_tcp.o(.data)
@@ -940,33 +937,34 @@ Image Symbol Table
     .data                                    0x20000208   Section        2  portevent.o(.data)
     eQueuedEvent                             0x20000208   Data           1  portevent.o(.data)
     xEventInQueue                            0x20000209   Data           1  portevent.o(.data)
-    .data                                    0x2000020a   Section        6  porttcp.o(.data)
+    .data                                    0x2000020a   Section       12  porttcp.o(.data)
     usTCPBufLen                              0x2000020a   Data           2  porttcp.o(.data)
     s_frame_ready                            0x2000020c   Data           1  porttcp.o(.data)
-    s_acc_len                                0x2000020e   Data           2  porttcp.o(.data)
-    .bss                                     0x20000210   Section      256  main.o(.bss)
-    .bss                                     0x20000310   Section     2820  task_tcp.o(.bss)
-    rxbuf                                    0x20000d10   Data         260  task_tcp.o(.bss)
-    .bss                                     0x20000e14   Section      200  usart.o(.bss)
-    .bss                                     0x20000edc   Section     2688  os_core.o(.bss)
-    .bss                                     0x2000195c   Section       16  socket.o(.bss)
-    sock_remained_size                       0x2000195c   Data          16  socket.o(.bss)
-    .bss                                     0x2000196c   Section      266  modtcpbsp.o(.bss)
-    s_ctx                                    0x2000196c   Data         266  modtcpbsp.o(.bss)
-    .bss                                     0x20001a76   Section      400  mb_user_reg.o(.bss)
-    usRegHoldingBuf                          0x20001a76   Data         200  mb_user_reg.o(.bss)
-    usRegInputBuf                            0x20001b3e   Data         200  mb_user_reg.o(.bss)
-    .bss                                     0x20001c06   Section       32  mbfuncother.o(.bss)
-    ucMBSlaveID                              0x20001c06   Data          32  mbfuncother.o(.bss)
-    .bss                                     0x20001c26   Section     1040  porttcp.o(.bss)
-    ucTCPBuf                                 0x20001c26   Data         260  porttcp.o(.bss)
-    s_acc                                    0x20001d2a   Data         780  porttcp.o(.bss)
-    .bss                                     0x20002038   Section       96  libspace.o(.bss)
-    HEAP                                     0x20002098   Section      512  startup_stm32f40_41xxx.o(HEAP)
-    Heap_Mem                                 0x20002098   Data         512  startup_stm32f40_41xxx.o(HEAP)
-    STACK                                    0x20002298   Section     1024  startup_stm32f40_41xxx.o(STACK)
-    Stack_Mem                                0x20002298   Data        1024  startup_stm32f40_41xxx.o(STACK)
-    __initial_sp                             0x20002698   Data           0  startup_stm32f40_41xxx.o(STACK)
+    s_frame_sock                             0x2000020d   Data           1  porttcp.o(.data)
+    s_acc_len                                0x2000020e   Data           8  porttcp.o(.data)
+    .bss                                     0x20000218   Section      256  main.o(.bss)
+    .bss                                     0x20000318   Section     2820  task_tcp.o(.bss)
+    rxbuf                                    0x20000d18   Data         260  task_tcp.o(.bss)
+    .bss                                     0x20000e1c   Section      200  usart.o(.bss)
+    .bss                                     0x20000ee4   Section     2688  os_core.o(.bss)
+    .bss                                     0x20001964   Section       16  socket.o(.bss)
+    sock_remained_size                       0x20001964   Data          16  socket.o(.bss)
+    .bss                                     0x20001974   Section     1056  modtcpbsp.o(.bss)
+    s_ctx                                    0x20001974   Data        1056  modtcpbsp.o(.bss)
+    .bss                                     0x20001d94   Section      400  mb_user_reg.o(.bss)
+    usRegHoldingBuf                          0x20001d94   Data         200  mb_user_reg.o(.bss)
+    usRegInputBuf                            0x20001e5c   Data         200  mb_user_reg.o(.bss)
+    .bss                                     0x20001f24   Section       32  mbfuncother.o(.bss)
+    ucMBSlaveID                              0x20001f24   Data          32  mbfuncother.o(.bss)
+    .bss                                     0x20001f44   Section     1820  porttcp.o(.bss)
+    ucTCPBuf                                 0x20001f44   Data         260  porttcp.o(.bss)
+    s_acc                                    0x20002048   Data        1560  porttcp.o(.bss)
+    .bss                                     0x20002660   Section       96  libspace.o(.bss)
+    HEAP                                     0x200026c0   Section      512  startup_stm32f40_41xxx.o(HEAP)
+    Heap_Mem                                 0x200026c0   Data         512  startup_stm32f40_41xxx.o(HEAP)
+    STACK                                    0x200028c0   Section     1024  startup_stm32f40_41xxx.o(STACK)
+    Stack_Mem                                0x200028c0   Data        1024  startup_stm32f40_41xxx.o(STACK)
+    __initial_sp                             0x20002cc0   Data           0  startup_stm32f40_41xxx.o(STACK)
 
     Global Symbols
 
@@ -1577,126 +1575,134 @@ Image Symbol Table
     getSNfromDHCP                            0x08008327   Thumb Code    26  dhcp.o(.text)
     getDNSfromDHCP                           0x08008341   Thumb Code    26  dhcp.o(.text)
     getDHCPLeasetime                         0x0800835b   Thumb Code     6  dhcp.o(.text)
-    tcp_srv_single_init                      0x0800847b   Thumb Code   120  modtcpbsp.o(.text)
-    tcp_srv_single_close                     0x080084f3   Thumb Code    90  modtcpbsp.o(.text)
-    tcp_srv_single_deinit                    0x0800854d   Thumb Code    14  modtcpbsp.o(.text)
-    tcp_srv_single_poll                      0x0800855b   Thumb Code   230  modtcpbsp.o(.text)
-    tcp_srv_single_peek                      0x08008641   Thumb Code    34  modtcpbsp.o(.text)
-    tcp_srv_single_read                      0x08008663   Thumb Code   110  modtcpbsp.o(.text)
-    tcp_srv_single_send                      0x080086d1   Thumb Code    88  modtcpbsp.o(.text)
-    tcp_srv_single_set_keepalive             0x08008729   Thumb Code    40  modtcpbsp.o(.text)
-    tcp_srv_single_link_state                0x08008751   Thumb Code   532  modtcpbsp.o(.text)
-    tcp_srv_single_is_connected              0x08008965   Thumb Code     8  modtcpbsp.o(.text)
-    tcp_srv_single_get_client_sn             0x0800896d   Thumb Code     8  modtcpbsp.o(.text)
-    tcp_srv_single_get_rx_buffer_usage       0x08008975   Thumb Code     8  modtcpbsp.o(.text)
-    tcp_srv_single_get_rx_buffer_size        0x0800897d   Thumb Code     6  modtcpbsp.o(.text)
-    eMBRegHoldingCB                          0x08008989   Thumb Code   116  mb_user_reg.o(.text)
-    eMBRegInputCB                            0x080089fd   Thumb Code    68  mb_user_reg.o(.text)
-    eMBRegCoilsCB                            0x08008a41   Thumb Code   274  mb_user_reg.o(.text)
-    eMBRegDiscreteCB                         0x08008b53   Thumb Code   130  mb_user_reg.o(.text)
-    MBUSR_Init                               0x08008bd5   Thumb Code     2  mb_user_reg.o(.text)
-    MBUSR_SetHoldingIdx                      0x08008bd7   Thumb Code    34  mb_user_reg.o(.text)
-    MBUSR_GetHoldingIdx                      0x08008bf9   Thumb Code    44  mb_user_reg.o(.text)
-    MBUSR_SetHoldingByAddr                   0x08008c25   Thumb Code    28  mb_user_reg.o(.text)
-    MBUSR_GetHoldingByAddr                   0x08008c41   Thumb Code    28  mb_user_reg.o(.text)
-    MBUSR_SetInputIdx                        0x08008c5d   Thumb Code    34  mb_user_reg.o(.text)
-    MBUSR_GetInputIdx                        0x08008c7f   Thumb Code    44  mb_user_reg.o(.text)
-    MBUSR_SetInputByAddr                     0x08008cab   Thumb Code    28  mb_user_reg.o(.text)
-    MBUSR_GetInputByAddr                     0x08008cc7   Thumb Code    28  mb_user_reg.o(.text)
-    MBUSR_SetCoilIdx                         0x08008ce3   Thumb Code    92  mb_user_reg.o(.text)
-    MBUSR_GetCoilIdx                         0x08008d3f   Thumb Code   114  mb_user_reg.o(.text)
-    MBUSR_SetCoilByAddr                      0x08008db1   Thumb Code    28  mb_user_reg.o(.text)
-    MBUSR_GetCoilByAddr                      0x08008dcd   Thumb Code    28  mb_user_reg.o(.text)
-    MBUSR_SetDiscreteIdx                     0x08008de9   Thumb Code    92  mb_user_reg.o(.text)
-    MBUSR_GetDiscreteIdx                     0x08008e45   Thumb Code    92  mb_user_reg.o(.text)
-    MBUSR_SetDiscreteByAddr                  0x08008ea1   Thumb Code    28  mb_user_reg.o(.text)
-    MBUSR_GetDiscreteByAddr                  0x08008ebd   Thumb Code    28  mb_user_reg.o(.text)
-    eMBInit                                  0x08008edd   Thumb Code    72  mb.o(.text)
-    eMBTCPInit                               0x08008f25   Thumb Code    86  mb.o(.text)
-    eMBRegisterCB                            0x08008f7b   Thumb Code   138  mb.o(.text)
-    eMBClose                                 0x08009005   Thumb Code    32  mb.o(.text)
-    eMBEnable                                0x08009025   Thumb Code    32  mb.o(.text)
-    eMBDisable                               0x08009045   Thumb Code    42  mb.o(.text)
-    eMBPoll                                  0x0800906f   Thumb Code   258  mb.o(.text)
-    eMBFuncReadCoils                         0x080091b9   Thumb Code   174  mbfunccoils.o(.text)
-    eMBFuncWriteCoil                         0x08009267   Thumb Code   112  mbfunccoils.o(.text)
-    eMBFuncWriteMultipleCoils                0x080092d7   Thumb Code   144  mbfunccoils.o(.text)
-    eMBFuncReadDiscreteInputs                0x08009367   Thumb Code   172  mbfuncdisc.o(.text)
-    eMBFuncWriteHoldingRegister              0x08009413   Thumb Code    66  mbfuncholding.o(.text)
-    eMBFuncWriteMultipleHoldingRegister      0x08009455   Thumb Code   110  mbfuncholding.o(.text)
-    eMBFuncReadHoldingRegister               0x080094c3   Thumb Code   142  mbfuncholding.o(.text)
-    eMBFuncReadWriteMultipleHoldingRegister  0x08009551   Thumb Code   212  mbfuncholding.o(.text)
-    eMBFuncReadInputRegister                 0x08009625   Thumb Code   140  mbfuncinput.o(.text)
-    eMBSetSlaveID                            0x080096b1   Thumb Code   110  mbfuncother.o(.text)
-    eMBFuncReportSlaveID                     0x0800971f   Thumb Code    30  mbfuncother.o(.text)
-    xMBUtilSetBits                           0x08009745   Thumb Code    96  mbutils.o(.text)
-    xMBUtilGetBits                           0x080097a5   Thumb Code    42  mbutils.o(.text)
-    prveMBError2Exception                    0x080097cf   Thumb Code    34  mbutils.o(.text)
-    eMBTCPDoInit                             0x080097f1   Thumb Code    20  mbtcp.o(.text)
-    eMBTCPStart                              0x08009805   Thumb Code     2  mbtcp.o(.text)
-    eMBTCPStop                               0x08009807   Thumb Code     8  mbtcp.o(.text)
-    eMBTCPReceive                            0x0800980f   Thumb Code    72  mbtcp.o(.text)
-    eMBTCPSend                               0x08009857   Thumb Code    48  mbtcp.o(.text)
-    xMBPortEventInit                         0x08009889   Thumb Code    10  portevent.o(.text)
-    xMBPortEventPost                         0x08009893   Thumb Code    16  portevent.o(.text)
-    xMBPortEventGet                          0x080098a3   Thumb Code    36  portevent.o(.text)
-    xMBTCPPortInit                           0x08009af9   Thumb Code    56  porttcp.o(.text)
-    vMBTCPPortClose                          0x08009b31   Thumb Code    30  porttcp.o(.text)
-    vMBTCPPortDisable                        0x08009b4f   Thumb Code    30  porttcp.o(.text)
-    vMBPortTCPPool                           0x08009b6d   Thumb Code    16  porttcp.o(.text)
-    xMBTCPPortGetRequest                     0x08009b7d   Thumb Code    40  porttcp.o(.text)
-    xMBTCPPortSendResponse                   0x08009ba5   Thumb Code    36  porttcp.o(.text)
-    EnterCriticalSection                     0x08009bc9   Thumb Code     4  porttcp.o(.text)
-    ExitCriticalSection                      0x08009bcd   Thumb Code     4  porttcp.o(.text)
-    xMBPortTCPPool                           0x08009bd1   Thumb Code     8  porttcp.o(.text)
-    __use_no_semihosting                     0x08009cd9   Thumb Code     2  use_no_semi_2.o(.text)
-    __2printf                                0x08009cdd   Thumb Code    20  noretval__2printf.o(.text)
-    _printf_pre_padding                      0x08009cf5   Thumb Code    44  _printf_pad.o(.text)
-    _printf_post_padding                     0x08009d21   Thumb Code    34  _printf_pad.o(.text)
-    _printf_str                              0x08009d43   Thumb Code    82  _printf_str.o(.text)
-    _printf_int_dec                          0x08009d95   Thumb Code   104  _printf_dec.o(.text)
-    _printf_int_hex                          0x08009e0d   Thumb Code    84  _printf_hex_int.o(.text)
-    _printf_longlong_hex                     0x08009e0d   Thumb Code     0  _printf_hex_int.o(.text)
-    __printf                                 0x08009e65   Thumb Code   388  __printf_flags_ss_wp.o(.text)
-    __aeabi_memcpy                           0x08009fed   Thumb Code     0  rt_memcpy_v6.o(.text)
-    __rt_memcpy                              0x08009fed   Thumb Code   138  rt_memcpy_v6.o(.text)
-    _memcpy_lastbytes                        0x0800a053   Thumb Code     0  rt_memcpy_v6.o(.text)
-    __aeabi_memmove                          0x0800a077   Thumb Code     0  rt_memmove_v6.o(.text)
-    __rt_memmove                             0x0800a077   Thumb Code   132  rt_memmove_v6.o(.text)
-    __memmove_lastfew                        0x0800a0d7   Thumb Code     0  rt_memmove_v6.o(.text)
-    __use_two_region_memory                  0x0800a0fb   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_escrow$2region                 0x0800a0fd   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_expand$2region                 0x0800a0ff   Thumb Code     2  heapauxi.o(.text)
-    __I$use$semihosting                      0x0800a101   Thumb Code     0  use_no_semi.o(.text)
-    __use_no_semihosting_swi                 0x0800a101   Thumb Code     2  use_no_semi.o(.text)
-    _printf_int_common                       0x0800a103   Thumb Code   178  _printf_intcommon.o(.text)
-    _printf_cs_common                        0x0800a1b5   Thumb Code    20  _printf_char.o(.text)
-    _printf_char                             0x0800a1c9   Thumb Code    16  _printf_char.o(.text)
-    _printf_string                           0x0800a1d9   Thumb Code     8  _printf_char.o(.text)
-    _printf_char_file                        0x0800a1e1   Thumb Code    32  _printf_char_file.o(.text)
-    __aeabi_memcpy4                          0x0800a205   Thumb Code     0  rt_memcpy_w.o(.text)
-    __aeabi_memcpy8                          0x0800a205   Thumb Code     0  rt_memcpy_w.o(.text)
-    __rt_memcpy_w                            0x0800a205   Thumb Code   100  rt_memcpy_w.o(.text)
-    _memcpy_lastbytes_aligned                0x0800a24d   Thumb Code     0  rt_memcpy_w.o(.text)
-    __aeabi_memmove4                         0x0800a269   Thumb Code     0  rt_memmove_w.o(.text)
-    __aeabi_memmove8                         0x0800a269   Thumb Code     0  rt_memmove_w.o(.text)
-    __rt_memmove_w                           0x0800a269   Thumb Code   122  rt_memmove_w.o(.text)
-    __memmove_aligned                        0x0800a28f   Thumb Code     0  rt_memmove_w.o(.text)
-    __memmove_lastfew_aligned                0x0800a2c7   Thumb Code     0  rt_memmove_w.o(.text)
-    _printf_char_common                      0x0800a2ef   Thumb Code    32  _printf_char_common.o(.text)
-    ferror                                   0x0800a315   Thumb Code     8  ferror.o(.text)
-    __user_setup_stackheap                   0x0800a31d   Thumb Code    74  sys_stackheap_outer.o(.text)
-    exit                                     0x0800a367   Thumb Code    18  exit.o(.text)
-    __user_libspace                          0x0800a379   Thumb Code     8  libspace.o(.text)
-    __user_perproc_libspace                  0x0800a379   Thumb Code     0  libspace.o(.text)
-    __user_perthread_libspace                0x0800a379   Thumb Code     0  libspace.o(.text)
-    _is_digit                                0x0800a381   Thumb Code    14  __printf_wp.o(i._is_digit)
-    _fp_init                                 0x0800a38f   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x0800a397   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x0800a397   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    OSUnMapTbl                               0x0800a398   Data         256  os_core.o(.constdata)
-    Region$$Table$$Base                      0x0800a630   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800a650   Number         0  anon$$obj.o(Region$$Table)
+    tcp_srv_init                             0x0800849b   Thumb Code   148  modtcpbsp.o(.text)
+    tcp_srv_close                            0x0800852f   Thumb Code    92  modtcpbsp.o(.text)
+    tcp_srv_close_all                        0x0800858b   Thumb Code    28  modtcpbsp.o(.text)
+    tcp_srv_deinit                           0x080085a7   Thumb Code    14  modtcpbsp.o(.text)
+    tcp_srv_poll                             0x080085b5   Thumb Code   968  modtcpbsp.o(.text)
+    tcp_srv_peek                             0x0800897d   Thumb Code    78  modtcpbsp.o(.text)
+    tcp_srv_read                             0x080089cb   Thumb Code   110  modtcpbsp.o(.text)
+    tcp_srv_send                             0x08008a39   Thumb Code   150  modtcpbsp.o(.text)
+    tcp_srv_set_keepalive                    0x08008acf   Thumb Code    40  modtcpbsp.o(.text)
+    tcp_srv_link_state                       0x08008af7   Thumb Code    30  modtcpbsp.o(.text)
+    tcp_srv_single_init                      0x08008b15   Thumb Code    12  modtcpbsp.o(.text)
+    tcp_srv_single_deinit                    0x08008b21   Thumb Code     8  modtcpbsp.o(.text)
+    tcp_srv_single_set_keepalive             0x08008b29   Thumb Code    12  modtcpbsp.o(.text)
+    tcp_srv_single_close                     0x08008b35   Thumb Code     8  modtcpbsp.o(.text)
+    tcp_srv_single_is_connected              0x08008b3d   Thumb Code     8  modtcpbsp.o(.text)
+    tcp_srv_single_get_client_sn             0x08008b45   Thumb Code     4  modtcpbsp.o(.text)
+    tcp_srv_single_get_rx_buffer_usage       0x08008b49   Thumb Code     8  modtcpbsp.o(.text)
+    tcp_srv_single_get_rx_buffer_size        0x08008b51   Thumb Code     6  modtcpbsp.o(.text)
+    tcp_srv_single_peek                      0x08008b57   Thumb Code    40  modtcpbsp.o(.text)
+    tcp_srv_single_read                      0x08008b7f   Thumb Code    22  modtcpbsp.o(.text)
+    tcp_srv_single_send                      0x08008b95   Thumb Code    18  modtcpbsp.o(.text)
+    eMBRegHoldingCB                          0x08008c59   Thumb Code   116  mb_user_reg.o(.text)
+    eMBRegInputCB                            0x08008ccd   Thumb Code    68  mb_user_reg.o(.text)
+    eMBRegCoilsCB                            0x08008d11   Thumb Code   274  mb_user_reg.o(.text)
+    eMBRegDiscreteCB                         0x08008e23   Thumb Code   130  mb_user_reg.o(.text)
+    MBUSR_Init                               0x08008ea5   Thumb Code     2  mb_user_reg.o(.text)
+    MBUSR_SetHoldingIdx                      0x08008ea7   Thumb Code    34  mb_user_reg.o(.text)
+    MBUSR_GetHoldingIdx                      0x08008ec9   Thumb Code    44  mb_user_reg.o(.text)
+    MBUSR_SetHoldingByAddr                   0x08008ef5   Thumb Code    28  mb_user_reg.o(.text)
+    MBUSR_GetHoldingByAddr                   0x08008f11   Thumb Code    28  mb_user_reg.o(.text)
+    MBUSR_SetInputIdx                        0x08008f2d   Thumb Code    34  mb_user_reg.o(.text)
+    MBUSR_GetInputIdx                        0x08008f4f   Thumb Code    44  mb_user_reg.o(.text)
+    MBUSR_SetInputByAddr                     0x08008f7b   Thumb Code    28  mb_user_reg.o(.text)
+    MBUSR_GetInputByAddr                     0x08008f97   Thumb Code    28  mb_user_reg.o(.text)
+    MBUSR_SetCoilIdx                         0x08008fb3   Thumb Code    92  mb_user_reg.o(.text)
+    MBUSR_GetCoilIdx                         0x0800900f   Thumb Code   114  mb_user_reg.o(.text)
+    MBUSR_SetCoilByAddr                      0x08009081   Thumb Code    28  mb_user_reg.o(.text)
+    MBUSR_GetCoilByAddr                      0x0800909d   Thumb Code    28  mb_user_reg.o(.text)
+    MBUSR_SetDiscreteIdx                     0x080090b9   Thumb Code    92  mb_user_reg.o(.text)
+    MBUSR_GetDiscreteIdx                     0x08009115   Thumb Code    92  mb_user_reg.o(.text)
+    MBUSR_SetDiscreteByAddr                  0x08009171   Thumb Code    28  mb_user_reg.o(.text)
+    MBUSR_GetDiscreteByAddr                  0x0800918d   Thumb Code    28  mb_user_reg.o(.text)
+    eMBInit                                  0x080091ad   Thumb Code    72  mb.o(.text)
+    eMBTCPInit                               0x080091f5   Thumb Code    86  mb.o(.text)
+    eMBRegisterCB                            0x0800924b   Thumb Code   138  mb.o(.text)
+    eMBClose                                 0x080092d5   Thumb Code    32  mb.o(.text)
+    eMBEnable                                0x080092f5   Thumb Code    32  mb.o(.text)
+    eMBDisable                               0x08009315   Thumb Code    42  mb.o(.text)
+    eMBPoll                                  0x0800933f   Thumb Code   258  mb.o(.text)
+    eMBFuncReadCoils                         0x08009489   Thumb Code   174  mbfunccoils.o(.text)
+    eMBFuncWriteCoil                         0x08009537   Thumb Code   112  mbfunccoils.o(.text)
+    eMBFuncWriteMultipleCoils                0x080095a7   Thumb Code   144  mbfunccoils.o(.text)
+    eMBFuncReadDiscreteInputs                0x08009637   Thumb Code   172  mbfuncdisc.o(.text)
+    eMBFuncWriteHoldingRegister              0x080096e3   Thumb Code    66  mbfuncholding.o(.text)
+    eMBFuncWriteMultipleHoldingRegister      0x08009725   Thumb Code   110  mbfuncholding.o(.text)
+    eMBFuncReadHoldingRegister               0x08009793   Thumb Code   142  mbfuncholding.o(.text)
+    eMBFuncReadWriteMultipleHoldingRegister  0x08009821   Thumb Code   212  mbfuncholding.o(.text)
+    eMBFuncReadInputRegister                 0x080098f5   Thumb Code   140  mbfuncinput.o(.text)
+    eMBSetSlaveID                            0x08009981   Thumb Code   110  mbfuncother.o(.text)
+    eMBFuncReportSlaveID                     0x080099ef   Thumb Code    30  mbfuncother.o(.text)
+    xMBUtilSetBits                           0x08009a15   Thumb Code    96  mbutils.o(.text)
+    xMBUtilGetBits                           0x08009a75   Thumb Code    42  mbutils.o(.text)
+    prveMBError2Exception                    0x08009a9f   Thumb Code    34  mbutils.o(.text)
+    eMBTCPDoInit                             0x08009ac1   Thumb Code    20  mbtcp.o(.text)
+    eMBTCPStart                              0x08009ad5   Thumb Code     2  mbtcp.o(.text)
+    eMBTCPStop                               0x08009ad7   Thumb Code     8  mbtcp.o(.text)
+    eMBTCPReceive                            0x08009adf   Thumb Code    72  mbtcp.o(.text)
+    eMBTCPSend                               0x08009b27   Thumb Code    48  mbtcp.o(.text)
+    xMBPortEventInit                         0x08009b59   Thumb Code    10  portevent.o(.text)
+    xMBPortEventPost                         0x08009b63   Thumb Code    16  portevent.o(.text)
+    xMBPortEventGet                          0x08009b73   Thumb Code    36  portevent.o(.text)
+    xMBTCPPortInit                           0x08009e3b   Thumb Code    60  porttcp.o(.text)
+    vMBTCPPortClose                          0x08009e77   Thumb Code    34  porttcp.o(.text)
+    vMBTCPPortDisable                        0x08009e99   Thumb Code    34  porttcp.o(.text)
+    vMBPortTCPPool                           0x08009ebb   Thumb Code    16  porttcp.o(.text)
+    xMBTCPPortGetRequest                     0x08009ecb   Thumb Code    40  porttcp.o(.text)
+    xMBTCPPortSendResponse                   0x08009ef3   Thumb Code    40  porttcp.o(.text)
+    EnterCriticalSection                     0x08009f1b   Thumb Code     4  porttcp.o(.text)
+    ExitCriticalSection                      0x08009f1f   Thumb Code     4  porttcp.o(.text)
+    xMBPortTCPPool                           0x08009f23   Thumb Code     8  porttcp.o(.text)
+    __use_no_semihosting                     0x0800a029   Thumb Code     2  use_no_semi_2.o(.text)
+    __2printf                                0x0800a02d   Thumb Code    20  noretval__2printf.o(.text)
+    _printf_pre_padding                      0x0800a045   Thumb Code    44  _printf_pad.o(.text)
+    _printf_post_padding                     0x0800a071   Thumb Code    34  _printf_pad.o(.text)
+    _printf_str                              0x0800a093   Thumb Code    82  _printf_str.o(.text)
+    _printf_int_dec                          0x0800a0e5   Thumb Code   104  _printf_dec.o(.text)
+    _printf_int_hex                          0x0800a15d   Thumb Code    84  _printf_hex_int.o(.text)
+    _printf_longlong_hex                     0x0800a15d   Thumb Code     0  _printf_hex_int.o(.text)
+    __printf                                 0x0800a1b5   Thumb Code   388  __printf_flags_ss_wp.o(.text)
+    __aeabi_memcpy                           0x0800a33d   Thumb Code     0  rt_memcpy_v6.o(.text)
+    __rt_memcpy                              0x0800a33d   Thumb Code   138  rt_memcpy_v6.o(.text)
+    _memcpy_lastbytes                        0x0800a3a3   Thumb Code     0  rt_memcpy_v6.o(.text)
+    __aeabi_memmove                          0x0800a3c7   Thumb Code     0  rt_memmove_v6.o(.text)
+    __rt_memmove                             0x0800a3c7   Thumb Code   132  rt_memmove_v6.o(.text)
+    __memmove_lastfew                        0x0800a427   Thumb Code     0  rt_memmove_v6.o(.text)
+    __use_two_region_memory                  0x0800a44b   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x0800a44d   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x0800a44f   Thumb Code     2  heapauxi.o(.text)
+    __I$use$semihosting                      0x0800a451   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x0800a451   Thumb Code     2  use_no_semi.o(.text)
+    _printf_int_common                       0x0800a453   Thumb Code   178  _printf_intcommon.o(.text)
+    _printf_cs_common                        0x0800a505   Thumb Code    20  _printf_char.o(.text)
+    _printf_char                             0x0800a519   Thumb Code    16  _printf_char.o(.text)
+    _printf_string                           0x0800a529   Thumb Code     8  _printf_char.o(.text)
+    _printf_char_file                        0x0800a531   Thumb Code    32  _printf_char_file.o(.text)
+    __aeabi_memcpy4                          0x0800a555   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memcpy8                          0x0800a555   Thumb Code     0  rt_memcpy_w.o(.text)
+    __rt_memcpy_w                            0x0800a555   Thumb Code   100  rt_memcpy_w.o(.text)
+    _memcpy_lastbytes_aligned                0x0800a59d   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memmove4                         0x0800a5b9   Thumb Code     0  rt_memmove_w.o(.text)
+    __aeabi_memmove8                         0x0800a5b9   Thumb Code     0  rt_memmove_w.o(.text)
+    __rt_memmove_w                           0x0800a5b9   Thumb Code   122  rt_memmove_w.o(.text)
+    __memmove_aligned                        0x0800a5df   Thumb Code     0  rt_memmove_w.o(.text)
+    __memmove_lastfew_aligned                0x0800a617   Thumb Code     0  rt_memmove_w.o(.text)
+    _printf_char_common                      0x0800a63f   Thumb Code    32  _printf_char_common.o(.text)
+    ferror                                   0x0800a665   Thumb Code     8  ferror.o(.text)
+    __user_setup_stackheap                   0x0800a66d   Thumb Code    74  sys_stackheap_outer.o(.text)
+    exit                                     0x0800a6b7   Thumb Code    18  exit.o(.text)
+    __user_libspace                          0x0800a6c9   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x0800a6c9   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x0800a6c9   Thumb Code     0  libspace.o(.text)
+    _is_digit                                0x0800a6d1   Thumb Code    14  __printf_wp.o(i._is_digit)
+    _fp_init                                 0x0800a6df   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x0800a6e7   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x0800a6e7   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    OSUnMapTbl                               0x0800a6e8   Data         256  os_core.o(.constdata)
+    Region$$Table$$Base                      0x0800a93c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800a95c   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f4xx.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f4xx.o(.data)
     default_net_info                         0x20000014   Data          23  task_tcp.o(.data)
@@ -1753,20 +1759,20 @@ Image Symbol Table
     pxMBPortCBTimerExpired                   0x20000170   Data           4  mb.o(.data)
     pxMBFrameCBReceiveFSMCur                 0x20000174   Data           4  mb.o(.data)
     pxMBFrameCBTransmitFSMCur                0x20000178   Data           4  mb.o(.data)
-    START_TASK_STK                           0x20000210   Data         256  main.o(.bss)
-    TCP_TASK_STK                             0x20000310   Data         256  task_tcp.o(.bss)
-    LED1_TASK_STK                            0x20000410   Data         256  task_tcp.o(.bss)
-    ethernet_buf                             0x20000510   Data        2048  task_tcp.o(.bss)
-    USART_RX_BUF                             0x20000e14   Data         200  usart.o(.bss)
-    OSEventTbl                               0x20000edc   Data         200  os_core.o(.bss)
-    OSFlagTbl                                0x20000fa4   Data          80  os_core.o(.bss)
-    OSTaskStatStk                            0x20000ff4   Data         512  os_core.o(.bss)
-    OSTaskIdleStk                            0x200011f4   Data         512  os_core.o(.bss)
-    OSTCBPrioTbl                             0x200013f4   Data         256  os_core.o(.bss)
-    OSTCBTbl                                 0x200014f4   Data        1008  os_core.o(.bss)
-    OSQTbl                                   0x200018e4   Data         120  os_core.o(.bss)
-    __libspace_start                         0x20002038   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x20002098   Data           0  libspace.o(.bss)
+    START_TASK_STK                           0x20000218   Data         256  main.o(.bss)
+    TCP_TASK_STK                             0x20000318   Data         256  task_tcp.o(.bss)
+    LED1_TASK_STK                            0x20000418   Data         256  task_tcp.o(.bss)
+    ethernet_buf                             0x20000518   Data        2048  task_tcp.o(.bss)
+    USART_RX_BUF                             0x20000e1c   Data         200  usart.o(.bss)
+    OSEventTbl                               0x20000ee4   Data         200  os_core.o(.bss)
+    OSFlagTbl                                0x20000fac   Data          80  os_core.o(.bss)
+    OSTaskStatStk                            0x20000ffc   Data         512  os_core.o(.bss)
+    OSTaskIdleStk                            0x200011fc   Data         512  os_core.o(.bss)
+    OSTCBPrioTbl                             0x200013fc   Data         256  os_core.o(.bss)
+    OSTCBTbl                                 0x200014fc   Data        1008  os_core.o(.bss)
+    OSQTbl                                   0x200018ec   Data         120  os_core.o(.bss)
+    __libspace_start                         0x20002660   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x200026c0   Data           0  libspace.o(.bss)
 
 
 
@@ -1776,65 +1782,65 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000a860, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x0000a6fc])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000ab74, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x0000aa08])
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000a650, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000a95c, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x00000188   Data   RO          630    RESET               startup_stm32f40_41xxx.o
-    0x08000188   0x08000188   0x00000008   Code   RO         1652  * !!!main             c_w.l(__main.o)
-    0x08000190   0x08000190   0x00000034   Code   RO         1845    !!!scatter          c_w.l(__scatter.o)
-    0x080001c4   0x080001c4   0x0000005a   Code   RO         1843    !!dczerorl2         c_w.l(__dczerorl2.o)
+    0x08000188   0x08000188   0x00000008   Code   RO         1651  * !!!main             c_w.l(__main.o)
+    0x08000190   0x08000190   0x00000034   Code   RO         1844    !!!scatter          c_w.l(__scatter.o)
+    0x080001c4   0x080001c4   0x0000005a   Code   RO         1842    !!dczerorl2         c_w.l(__dczerorl2.o)
     0x0800021e   0x0800021e   0x00000002   PAD
-    0x08000220   0x08000220   0x0000001c   Code   RO         1847    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x0800023c   0x0800023c   0x00000000   Code   RO         1645    .ARM.Collect$$_printf_percent$$00000000  c_w.l(_printf_percent.o)
-    0x0800023c   0x0800023c   0x00000006   Code   RO         1643    .ARM.Collect$$_printf_percent$$00000009  c_w.l(_printf_d.o)
-    0x08000242   0x08000242   0x00000006   Code   RO         1644    .ARM.Collect$$_printf_percent$$0000000A  c_w.l(_printf_u.o)
-    0x08000248   0x08000248   0x00000006   Code   RO         1642    .ARM.Collect$$_printf_percent$$0000000C  c_w.l(_printf_x.o)
-    0x0800024e   0x0800024e   0x00000006   Code   RO         1641    .ARM.Collect$$_printf_percent$$00000014  c_w.l(_printf_s.o)
-    0x08000254   0x08000254   0x00000004   Code   RO         1675    .ARM.Collect$$_printf_percent$$00000017  c_w.l(_printf_percent_end.o)
-    0x08000258   0x08000258   0x00000002   Code   RO         1717    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x0800025a   0x0800025a   0x00000004   Code   RO         1723    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1726    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1729    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1731    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1733    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1736    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1738    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1740    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1742    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1744    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1746    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1748    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1750    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1752    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1754    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1756    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1760    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1762    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1764    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000000   Code   RO         1766    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x0800025e   0x0800025e   0x00000002   Code   RO         1767    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x08000260   0x08000260   0x00000002   Code   RO         1785    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x08000262   0x08000262   0x00000000   Code   RO         1795    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x08000262   0x08000262   0x00000000   Code   RO         1797    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x08000262   0x08000262   0x00000000   Code   RO         1800    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x08000262   0x08000262   0x00000000   Code   RO         1803    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x08000262   0x08000262   0x00000000   Code   RO         1805    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x08000262   0x08000262   0x00000000   Code   RO         1808    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x08000262   0x08000262   0x00000002   Code   RO         1809    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x08000264   0x08000264   0x00000000   Code   RO         1668    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x08000264   0x08000264   0x00000000   Code   RO         1686    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x08000264   0x08000264   0x00000006   Code   RO         1698    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x0800026a   0x0800026a   0x00000000   Code   RO         1688    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x0800026a   0x0800026a   0x00000004   Code   RO         1689    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x0800026e   0x0800026e   0x00000000   Code   RO         1691    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x0800026e   0x0800026e   0x00000008   Code   RO         1692    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x08000276   0x08000276   0x00000002   Code   RO         1721    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x08000278   0x08000278   0x00000000   Code   RO         1769    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x08000278   0x08000278   0x00000004   Code   RO         1770    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x0800027c   0x0800027c   0x00000006   Code   RO         1771    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x08000220   0x08000220   0x0000001c   Code   RO         1846    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x0800023c   0x0800023c   0x00000000   Code   RO         1644    .ARM.Collect$$_printf_percent$$00000000  c_w.l(_printf_percent.o)
+    0x0800023c   0x0800023c   0x00000006   Code   RO         1642    .ARM.Collect$$_printf_percent$$00000009  c_w.l(_printf_d.o)
+    0x08000242   0x08000242   0x00000006   Code   RO         1643    .ARM.Collect$$_printf_percent$$0000000A  c_w.l(_printf_u.o)
+    0x08000248   0x08000248   0x00000006   Code   RO         1641    .ARM.Collect$$_printf_percent$$0000000C  c_w.l(_printf_x.o)
+    0x0800024e   0x0800024e   0x00000006   Code   RO         1640    .ARM.Collect$$_printf_percent$$00000014  c_w.l(_printf_s.o)
+    0x08000254   0x08000254   0x00000004   Code   RO         1674    .ARM.Collect$$_printf_percent$$00000017  c_w.l(_printf_percent_end.o)
+    0x08000258   0x08000258   0x00000002   Code   RO         1716    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x0800025a   0x0800025a   0x00000004   Code   RO         1722    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1725    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1728    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1730    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1732    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1735    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1737    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1739    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1741    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1743    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1745    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1747    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1749    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1751    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1753    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1755    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1759    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1761    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1763    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000000   Code   RO         1765    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x0800025e   0x0800025e   0x00000002   Code   RO         1766    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x08000260   0x08000260   0x00000002   Code   RO         1784    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x08000262   0x08000262   0x00000000   Code   RO         1794    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x08000262   0x08000262   0x00000000   Code   RO         1796    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x08000262   0x08000262   0x00000000   Code   RO         1799    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x08000262   0x08000262   0x00000000   Code   RO         1802    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x08000262   0x08000262   0x00000000   Code   RO         1804    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x08000262   0x08000262   0x00000000   Code   RO         1807    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x08000262   0x08000262   0x00000002   Code   RO         1808    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x08000264   0x08000264   0x00000000   Code   RO         1667    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x08000264   0x08000264   0x00000000   Code   RO         1685    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x08000264   0x08000264   0x00000006   Code   RO         1697    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x0800026a   0x0800026a   0x00000000   Code   RO         1687    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x0800026a   0x0800026a   0x00000004   Code   RO         1688    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x0800026e   0x0800026e   0x00000000   Code   RO         1690    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x0800026e   0x0800026e   0x00000008   Code   RO         1691    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x08000276   0x08000276   0x00000002   Code   RO         1720    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x08000278   0x08000278   0x00000000   Code   RO         1768    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x08000278   0x08000278   0x00000004   Code   RO         1769    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x0800027c   0x0800027c   0x00000006   Code   RO         1770    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x08000282   0x08000282   0x00000002   PAD
     0x08000284   0x08000284   0x00000080   Code   RO            3    .text               main.o
     0x08000304   0x08000304   0x00000016   Code   RO          184    .text               stm32f4xx_it.o
@@ -1868,56 +1874,54 @@ Memory Map of the image
     0x08006d94   0x08006d94   0x0000043a   Code   RO         1190    .text               w5500.o
     0x080071ce   0x080071ce   0x00000002   PAD
     0x080071d0   0x080071d0   0x000011bc   Code   RO         1205    .text               dhcp.o
-    0x0800838c   0x0800838c   0x000005fc   Code   RO         1222    .text               modtcpbsp.o
-    0x08008988   0x08008988   0x00000554   Code   RO         1256    .text               mb_user_reg.o
-    0x08008edc   0x08008edc   0x000002dc   Code   RO         1295    .text               mb.o
-    0x080091b8   0x080091b8   0x000001ae   Code   RO         1356    .text               mbfunccoils.o
-    0x08009366   0x08009366   0x000000ac   Code   RO         1379    .text               mbfuncdisc.o
-    0x08009412   0x08009412   0x00000212   Code   RO         1413    .text               mbfuncholding.o
-    0x08009624   0x08009624   0x0000008c   Code   RO         1433    .text               mbfuncinput.o
-    0x080096b0   0x080096b0   0x00000094   Code   RO         1453    .text               mbfuncother.o
-    0x08009744   0x08009744   0x000000ac   Code   RO         1476    .text               mbutils.o
-    0x080097f0   0x080097f0   0x00000096   Code   RO         1518    .text               mbtcp.o
-    0x08009886   0x08009886   0x00000002   PAD
-    0x08009888   0x08009888   0x00000048   Code   RO         1538    .text               portevent.o
-    0x080098d0   0x080098d0   0x00000408   Code   RO         1560    .text               porttcp.o
-    0x08009cd8   0x08009cd8   0x00000002   Code   RO         1586    .text               c_w.l(use_no_semi_2.o)
-    0x08009cda   0x08009cda   0x00000002   PAD
-    0x08009cdc   0x08009cdc   0x00000018   Code   RO         1590    .text               c_w.l(noretval__2printf.o)
-    0x08009cf4   0x08009cf4   0x0000004e   Code   RO         1594    .text               c_w.l(_printf_pad.o)
-    0x08009d42   0x08009d42   0x00000052   Code   RO         1596    .text               c_w.l(_printf_str.o)
-    0x08009d94   0x08009d94   0x00000078   Code   RO         1598    .text               c_w.l(_printf_dec.o)
-    0x08009e0c   0x08009e0c   0x00000058   Code   RO         1603    .text               c_w.l(_printf_hex_int.o)
-    0x08009e64   0x08009e64   0x00000188   Code   RO         1638    .text               c_w.l(__printf_flags_ss_wp.o)
-    0x08009fec   0x08009fec   0x0000008a   Code   RO         1646    .text               c_w.l(rt_memcpy_v6.o)
-    0x0800a076   0x0800a076   0x00000084   Code   RO         1648    .text               c_w.l(rt_memmove_v6.o)
-    0x0800a0fa   0x0800a0fa   0x00000006   Code   RO         1650    .text               c_w.l(heapauxi.o)
-    0x0800a100   0x0800a100   0x00000002   Code   RO         1666    .text               c_w.l(use_no_semi.o)
-    0x0800a102   0x0800a102   0x000000b2   Code   RO         1669    .text               c_w.l(_printf_intcommon.o)
-    0x0800a1b4   0x0800a1b4   0x0000002c   Code   RO         1671    .text               c_w.l(_printf_char.o)
-    0x0800a1e0   0x0800a1e0   0x00000024   Code   RO         1673    .text               c_w.l(_printf_char_file.o)
-    0x0800a204   0x0800a204   0x00000064   Code   RO         1676    .text               c_w.l(rt_memcpy_w.o)
-    0x0800a268   0x0800a268   0x0000007a   Code   RO         1678    .text               c_w.l(rt_memmove_w.o)
-    0x0800a2e2   0x0800a2e2   0x00000002   PAD
-    0x0800a2e4   0x0800a2e4   0x00000030   Code   RO         1700    .text               c_w.l(_printf_char_common.o)
-    0x0800a314   0x0800a314   0x00000008   Code   RO         1702    .text               c_w.l(ferror.o)
-    0x0800a31c   0x0800a31c   0x0000004a   Code   RO         1706    .text               c_w.l(sys_stackheap_outer.o)
-    0x0800a366   0x0800a366   0x00000012   Code   RO         1710    .text               c_w.l(exit.o)
-    0x0800a378   0x0800a378   0x00000008   Code   RO         1718    .text               c_w.l(libspace.o)
-    0x0800a380   0x0800a380   0x0000000e   Code   RO         1631    i._is_digit         c_w.l(__printf_wp.o)
-    0x0800a38e   0x0800a38e   0x0000000a   Code   RO         1777    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x0800a398   0x0800a398   0x00000100   Data   RO          824    .constdata          os_core.o
-    0x0800a498   0x0800a498   0x00000028   Data   RO         1604    .constdata          c_w.l(_printf_hex_int.o)
-    0x0800a4c0   0x0800a4c0   0x00000011   Data   RO         1639    .constdata          c_w.l(__printf_flags_ss_wp.o)
-    0x0800a4d1   0x0800a4d1   0x00000003   PAD
-    0x0800a4d4   0x0800a4d4   0x00000116   Data   RO         1086    .conststring        wiz_interface.o
-    0x0800a5ea   0x0800a5ea   0x00000002   PAD
-    0x0800a5ec   0x0800a5ec   0x00000043   Data   RO         1224    .conststring        modtcpbsp.o
-    0x0800a62f   0x0800a62f   0x00000001   PAD
-    0x0800a630   0x0800a630   0x00000020   Data   RO         1841    Region$$Table       anon$$obj.o
+    0x0800838c   0x0800838c   0x000008cc   Code   RO         1222    .text               modtcpbsp.o
+    0x08008c58   0x08008c58   0x00000554   Code   RO         1255    .text               mb_user_reg.o
+    0x080091ac   0x080091ac   0x000002dc   Code   RO         1294    .text               mb.o
+    0x08009488   0x08009488   0x000001ae   Code   RO         1355    .text               mbfunccoils.o
+    0x08009636   0x08009636   0x000000ac   Code   RO         1378    .text               mbfuncdisc.o
+    0x080096e2   0x080096e2   0x00000212   Code   RO         1412    .text               mbfuncholding.o
+    0x080098f4   0x080098f4   0x0000008c   Code   RO         1432    .text               mbfuncinput.o
+    0x08009980   0x08009980   0x00000094   Code   RO         1452    .text               mbfuncother.o
+    0x08009a14   0x08009a14   0x000000ac   Code   RO         1475    .text               mbutils.o
+    0x08009ac0   0x08009ac0   0x00000096   Code   RO         1517    .text               mbtcp.o
+    0x08009b56   0x08009b56   0x00000002   PAD
+    0x08009b58   0x08009b58   0x00000048   Code   RO         1537    .text               portevent.o
+    0x08009ba0   0x08009ba0   0x00000488   Code   RO         1559    .text               porttcp.o
+    0x0800a028   0x0800a028   0x00000002   Code   RO         1585    .text               c_w.l(use_no_semi_2.o)
+    0x0800a02a   0x0800a02a   0x00000002   PAD
+    0x0800a02c   0x0800a02c   0x00000018   Code   RO         1589    .text               c_w.l(noretval__2printf.o)
+    0x0800a044   0x0800a044   0x0000004e   Code   RO         1593    .text               c_w.l(_printf_pad.o)
+    0x0800a092   0x0800a092   0x00000052   Code   RO         1595    .text               c_w.l(_printf_str.o)
+    0x0800a0e4   0x0800a0e4   0x00000078   Code   RO         1597    .text               c_w.l(_printf_dec.o)
+    0x0800a15c   0x0800a15c   0x00000058   Code   RO         1602    .text               c_w.l(_printf_hex_int.o)
+    0x0800a1b4   0x0800a1b4   0x00000188   Code   RO         1637    .text               c_w.l(__printf_flags_ss_wp.o)
+    0x0800a33c   0x0800a33c   0x0000008a   Code   RO         1645    .text               c_w.l(rt_memcpy_v6.o)
+    0x0800a3c6   0x0800a3c6   0x00000084   Code   RO         1647    .text               c_w.l(rt_memmove_v6.o)
+    0x0800a44a   0x0800a44a   0x00000006   Code   RO         1649    .text               c_w.l(heapauxi.o)
+    0x0800a450   0x0800a450   0x00000002   Code   RO         1665    .text               c_w.l(use_no_semi.o)
+    0x0800a452   0x0800a452   0x000000b2   Code   RO         1668    .text               c_w.l(_printf_intcommon.o)
+    0x0800a504   0x0800a504   0x0000002c   Code   RO         1670    .text               c_w.l(_printf_char.o)
+    0x0800a530   0x0800a530   0x00000024   Code   RO         1672    .text               c_w.l(_printf_char_file.o)
+    0x0800a554   0x0800a554   0x00000064   Code   RO         1675    .text               c_w.l(rt_memcpy_w.o)
+    0x0800a5b8   0x0800a5b8   0x0000007a   Code   RO         1677    .text               c_w.l(rt_memmove_w.o)
+    0x0800a632   0x0800a632   0x00000002   PAD
+    0x0800a634   0x0800a634   0x00000030   Code   RO         1699    .text               c_w.l(_printf_char_common.o)
+    0x0800a664   0x0800a664   0x00000008   Code   RO         1701    .text               c_w.l(ferror.o)
+    0x0800a66c   0x0800a66c   0x0000004a   Code   RO         1705    .text               c_w.l(sys_stackheap_outer.o)
+    0x0800a6b6   0x0800a6b6   0x00000012   Code   RO         1709    .text               c_w.l(exit.o)
+    0x0800a6c8   0x0800a6c8   0x00000008   Code   RO         1717    .text               c_w.l(libspace.o)
+    0x0800a6d0   0x0800a6d0   0x0000000e   Code   RO         1630    i._is_digit         c_w.l(__printf_wp.o)
+    0x0800a6de   0x0800a6de   0x0000000a   Code   RO         1776    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x0800a6e8   0x0800a6e8   0x00000100   Data   RO          824    .constdata          os_core.o
+    0x0800a7e8   0x0800a7e8   0x00000028   Data   RO         1603    .constdata          c_w.l(_printf_hex_int.o)
+    0x0800a810   0x0800a810   0x00000011   Data   RO         1638    .constdata          c_w.l(__printf_flags_ss_wp.o)
+    0x0800a821   0x0800a821   0x00000003   PAD
+    0x0800a824   0x0800a824   0x00000116   Data   RO         1086    .conststring        wiz_interface.o
+    0x0800a93a   0x0800a93a   0x00000002   PAD
+    0x0800a93c   0x0800a93c   0x00000020   Data   RO         1840    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800a650, Size: 0x00002698, Max: 0x00020000, ABSOLUTE, COMPRESSED[0x000000ac])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800a95c, Size: 0x00002cc0, Max: 0x00020000, ABSOLUTE, COMPRESSED[0x000000ac])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1934,27 +1938,27 @@ Memory Map of the image
     0x200000b4   COMPRESSED   0x00000031   Data   RW         1170    .data               wizchip_conf.o
     0x200000e5   COMPRESSED   0x00000003   PAD
     0x200000e8   COMPRESSED   0x00000050   Data   RW         1206    .data               dhcp.o
-    0x20000138   COMPRESSED   0x00000005   Data   RW         1225    .data               modtcpbsp.o
-    0x2000013d   COMPRESSED   0x00000010   Data   RW         1258    .data               mb_user_reg.o
+    0x20000138   COMPRESSED   0x00000005   Data   RW         1224    .data               modtcpbsp.o
+    0x2000013d   COMPRESSED   0x00000010   Data   RW         1257    .data               mb_user_reg.o
     0x2000014d   COMPRESSED   0x00000003   PAD
-    0x20000150   COMPRESSED   0x000000b5   Data   RW         1296    .data               mb.o
+    0x20000150   COMPRESSED   0x000000b5   Data   RW         1295    .data               mb.o
     0x20000205   COMPRESSED   0x00000001   PAD
-    0x20000206   COMPRESSED   0x00000002   Data   RW         1455    .data               mbfuncother.o
-    0x20000208   COMPRESSED   0x00000002   Data   RW         1539    .data               portevent.o
-    0x2000020a   COMPRESSED   0x00000006   Data   RW         1562    .data               porttcp.o
-    0x20000210        -       0x00000100   Zero   RW            4    .bss                main.o
-    0x20000310        -       0x00000b04   Zero   RW          260    .bss                task_tcp.o
-    0x20000e14        -       0x000000c8   Zero   RW          600    .bss                usart.o
-    0x20000edc        -       0x00000a80   Zero   RW          823    .bss                os_core.o
-    0x2000195c        -       0x00000010   Zero   RW         1154    .bss                socket.o
-    0x2000196c        -       0x0000010a   Zero   RW         1223    .bss                modtcpbsp.o
-    0x20001a76        -       0x00000190   Zero   RW         1257    .bss                mb_user_reg.o
-    0x20001c06        -       0x00000020   Zero   RW         1454    .bss                mbfuncother.o
-    0x20001c26        -       0x00000410   Zero   RW         1561    .bss                porttcp.o
-    0x20002036   COMPRESSED   0x00000002   PAD
-    0x20002038        -       0x00000060   Zero   RW         1719    .bss                c_w.l(libspace.o)
-    0x20002098        -       0x00000200   Zero   RW          629    HEAP                startup_stm32f40_41xxx.o
-    0x20002298        -       0x00000400   Zero   RW          628    STACK               startup_stm32f40_41xxx.o
+    0x20000206   COMPRESSED   0x00000002   Data   RW         1454    .data               mbfuncother.o
+    0x20000208   COMPRESSED   0x00000002   Data   RW         1538    .data               portevent.o
+    0x2000020a   COMPRESSED   0x0000000c   Data   RW         1561    .data               porttcp.o
+    0x20000216   COMPRESSED   0x00000002   PAD
+    0x20000218        -       0x00000100   Zero   RW            4    .bss                main.o
+    0x20000318        -       0x00000b04   Zero   RW          260    .bss                task_tcp.o
+    0x20000e1c        -       0x000000c8   Zero   RW          600    .bss                usart.o
+    0x20000ee4        -       0x00000a80   Zero   RW          823    .bss                os_core.o
+    0x20001964        -       0x00000010   Zero   RW         1154    .bss                socket.o
+    0x20001974        -       0x00000420   Zero   RW         1223    .bss                modtcpbsp.o
+    0x20001d94        -       0x00000190   Zero   RW         1256    .bss                mb_user_reg.o
+    0x20001f24        -       0x00000020   Zero   RW         1453    .bss                mbfuncother.o
+    0x20001f44        -       0x0000071c   Zero   RW         1560    .bss                porttcp.o
+    0x20002660        -       0x00000060   Zero   RW         1718    .bss                c_w.l(libspace.o)
+    0x200026c0        -       0x00000200   Zero   RW          629    HEAP                startup_stm32f40_41xxx.o
+    0x200028c0        -       0x00000400   Zero   RW          628    STACK               startup_stm32f40_41xxx.o
 
 
 ==============================================================================
@@ -1978,7 +1982,7 @@ Image component sizes
        150          0          0          0          0       2251   mbtcp.o
        172          0          0          0          0       1942   mbutils.o
        224         20          0          0          0       1801   misc.o
-      1532        506         67          5        266       5290   modtcpbsp.o
+      2252        672          0          5       1056       7525   modtcpbsp.o
       2192        218        256         72       2688      15227   os_core.o
        200         32          0          0          0        312   os_cpu_a.o
        452          6          0          0          0      10594   os_cpu_c.o
@@ -1987,7 +1991,7 @@ Image component sizes
       1988         70          0          0          0       7885   os_task.o
        432         30          0          0          0       1870   os_time.o
         72         10          0          2          0       1612   portevent.o
-      1032        256          0          6       1040       4426   porttcp.o
+      1160        254          0         12       1820       4418   porttcp.o
       4300         88          0         14         16       7484   socket.o
        576         14          0          0          0       1800   spi.o
         64         26        392          0       1536        824   startup_stm32f40_41xxx.o
@@ -1998,7 +2002,7 @@ Image component sizes
       3234         60          0          0          0      23000   stm32f4xx_tim.o
       1108         34          0          0          0       7868   stm32f4xx_usart.o
        528         46          0         20          0       1755   system_stm32f4xx.o
-       916        488          0         40       2820       7698   task_tcp.o
+       916        488          0         40       2820       7726   task_tcp.o
          0          0          0          0          0       1756   tcp_server_multi_socket.o
         92          4          0          0          0        688   timer.o
        340         18          0          6        200       3342   usart.o
@@ -2008,9 +2012,9 @@ Image component sizes
       1756         38          0         49          0      12327   wizchip_conf.o
 
     ----------------------------------------------------------------------
-     39508       3024       1028        528       9256     513771   Object Totals
+     40356       3188        960        536      10824     516026   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         8          0          3         11          2          0   (incl. Padding)
+         8          0          2         13          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2080,15 +2084,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     41488       3074       1088        528       9352     507131   Grand Totals
-     41488       3074       1088        172       9352     507131   ELF Image Totals (compressed)
-     41488       3074       1088        172          0          0   ROM Totals
+     42336       3238       1020        536      10920     509386   Grand Totals
+     42336       3238       1020        172      10920     509386   ELF Image Totals (compressed)
+     42336       3238       1020        172          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                42576 (  41.58kB)
-    Total RW  Size (RW Data + ZI Data)              9880 (   9.65kB)
-    Total ROM Size (Code + RO Data + RW Data)      42748 (  41.75kB)
+    Total RO  Size (Code + RO Data)                43356 (  42.34kB)
+    Total RW  Size (RW Data + ZI Data)             11456 (  11.19kB)
+    Total ROM Size (Code + RO Data + RW Data)      43528 (  42.51kB)
 
 ==============================================================================
 

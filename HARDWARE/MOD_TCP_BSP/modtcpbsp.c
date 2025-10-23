@@ -372,6 +372,42 @@ tcp_link_t tcp_srv_link_state(void)
     return (link == PHY_LINK_ON) ? TCP_LINK_UP : TCP_LINK_DOWN;
 }
 
+#ifdef TCP_MULTI_CONNECTION_MODE
+/* Compatibility wrappers: provide single-mode API when compiled in multi-mode so
+   legacy callers (task_tcp.c, etc.) still link. These map single-* calls to
+   the multi-socket implementation, using socket 0 as the primary listener.
+*/
+void tcp_srv_single_init(uint16_t port) { tcp_srv_init(port); }
+void tcp_srv_single_deinit(void) { tcp_srv_deinit(); }
+void tcp_srv_single_set_keepalive(uint8_t s) { tcp_srv_set_keepalive(s); }
+void tcp_srv_single_close(void) { tcp_srv_close_all(); }
+uint8_t tcp_srv_single_is_connected(void) { return s_ctx[0].connected; }
+uint8_t tcp_srv_single_get_client_sn(void) { return 0; }
+uint16_t tcp_srv_single_get_rx_buffer_usage(void) { return s_ctx[0].rxlen; }
+uint16_t tcp_srv_single_get_rx_buffer_size(void) { return TCP_RX_MAX; }
+
+int tcp_srv_single_peek(const uint8_t **pbuf, uint16_t *plen)
+{
+    uint8_t sn;
+    const uint8_t *p;
+    uint16_t l;
+    if (!tcp_srv_peek(&sn, &p, &l)) return 0;
+    if (pbuf) *pbuf = p;
+    if (plen) *plen = l;
+    return 1;
+}
+
+int tcp_srv_single_read(uint8_t *dst, uint16_t maxlen, uint16_t *outlen)
+{
+    uint8_t sn;
+    return tcp_srv_read(&sn, dst, maxlen, outlen);
+}
+
+int tcp_srv_single_send(const uint8_t *src, uint16_t len)
+{
+    return tcp_srv_send(0, src, len);
+}
+#endif
 
 #endif
 

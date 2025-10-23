@@ -149,7 +149,8 @@ static void try_extract_frames(void)
 
 #ifdef TCP_MULTI_CONNECTION_MODE
     /* 扫描每个 socket 的累加缓冲，优先级从 0..TCP_MAX_SOCK-1 */
-    for (uint8_t sid = 0; sid < TCP_MAX_SOCK; sid++) {
+    { uint8_t sid;
+    for (sid = 0; sid < TCP_MAX_SOCK; sid++) {
         if (s_acc_len[sid] < 7U) continue;
         if (!mbap_ok_and_total(&s_acc[sid][0], &total)) {
             /* slide-1 */
@@ -183,7 +184,7 @@ static void try_extract_frames(void)
 
         return;
     }
-
+    }
 #else
     /* 单连接行为保持不变 */
     for (;;) {
