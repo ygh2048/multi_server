@@ -58,25 +58,24 @@ uint16_t local_port = 502;
 /*
 
 
+/*
 void tcp_task(void *pdata)
 {
-	printf("%s TCP Server Multi Socket example\r\n",_WIZCHIP_ID_);
-	wizchip_reset();
-	delay_ms(10);
-	//wizchip init 
-	wizchip_initialize();
-	delay_ms(10);
-	network_init(ethernet_buf, &default_net_info);
-	delay_ms(10);
-	SPI2_SetSpeed(8);//提速
-	while(1)
-	{
-		multi_tcps_socket(ethernet_buf, local_port);
-	};
+    printf("%s TCP Server Multi Socket example\r\n",_WIZCHIP_ID_);
+    wizchip_reset();
+    delay_ms(10);
+    //wizchip init 
+    wizchip_initialize();
+    delay_ms(10);
+    network_init(ethernet_buf, &default_net_info);
+    delay_ms(10);
+    SPI2_SetSpeed(8);//提速
+    while(1)
+    {
+        multi_tcps_socket(ethernet_buf, local_port);
+    };
 }
 */
-
-static uint8_t rxbuf[TCP_RX_MAX];
 
 
 void tcp_task(void *pdata)
@@ -84,14 +83,10 @@ void tcp_task(void *pdata)
     eMBErrorCode eStatus;
     static uint32_t last_debug_time = 0;
     static uint32_t poll_count = 0;
-    static uint32_t last_print_time = 0;  /* 用于每秒打印数据 */
 
     uint16_t rx_rsr;
     uint16_t rx_rd;
     uint32_t current_time;
-    const uint8_t *pbuf;
-    uint16_t plen;
-    int i;
 
     printf("W5500 Modbus/TCP Server start\r\n");
 
