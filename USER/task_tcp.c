@@ -36,6 +36,21 @@ void vMBPortTCPPool(void);
 //TCP任务
 
 
+#define MODBUS_PORT  502
+#define ETHERNET_BUF_MAX_SIZE (1024 * 2)
+/* network information */
+wiz_NetInfo default_net_info = {
+    {0x00, 0x08, 0xdc, 0x12, 0x22, 0x12},   /* mac */
+    {192, 168, 103, 200},                   /* ip  */
+    {255, 255, 255, 0},                     /* sn  */
+    {192, 168, 103, 1},                     /* gw  */
+    {8, 8, 8, 8},                           /* dns */
+    NETINFO_STATIC                          /* dhcp */
+};
+uint8_t ethernet_buf[ETHERNET_BUF_MAX_SIZE] = {0};
+uint16_t local_port = 502;
+
+
 void tcp_task(void *pdata)
 {
     eMBErrorCode eStatus;
