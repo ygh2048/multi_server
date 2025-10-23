@@ -71,13 +71,15 @@
 //Global variables
 unsigned char targetIP[4] = {}; // mqtt server IP
 unsigned int targetPort = 1883; // mqtt server port
-uint8_t mac_address[6] = {};
-wiz_NetInfo gWIZNETINFO = { .mac = {}, //user MAC
-							.ip = {}, //user IP
-							.sn = {},
-							.gw = {},
-							.dns = {},
-							.dhcp = NETINFO_STATIC};
+uint8_t mac_address[6] = {0,0,0,0,0,0};
+wiz_NetInfo gWIZNETINFO = {
+	{0,0,0,0,0,0}, /* mac */
+	{0,0,0,0},     /* ip  */
+	{0,0,0,0},     /* sn  */
+	{0,0,0,0},     /* gw  */
+	{0,0,0,0},     /* dns */
+	NETINFO_STATIC /* dhcp */
+};
 
 unsigned char tempBuffer[BUFFER_SIZE] = {};
 

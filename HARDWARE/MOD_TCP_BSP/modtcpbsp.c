@@ -486,8 +486,7 @@ void tcp_srv_single_poll(void)
     uint16_t chunk;
     int32_t r;
     uint16_t room ;
-    int i;
-            uint16_t avail;
+    uint16_t avail;
     /* 先看 PHY；断链则不做后续 */
     monitor_phy_single();
     if (s_link_last == PHY_LINK_OFF) {
@@ -508,45 +507,35 @@ void tcp_srv_single_poll(void)
             apply_keepalive_single(s_ctx.client_sn);
         }
 
-        /* 处理接收数据 */
-
+        /* 处理接收数据：尽可能读取所有可用字节，并按 MB/TCP (MBAP) 解析完整帧 */
         avail = getSn_RX_RSR(s_ctx.client_sn);
-        
-        if (avail > 0) {
-            room = TCP_RX_MAX - s_ctx.rxlen;
-            
-            if (room == 0) {
-                /* 缓冲区已满 - 强制清空并输出警告 */
+        while (avail > 0) {
+            room = (uint16_t)((TCP_RX_MAX > s_ctx.rxlen) ? (TCP_RX_MAX - s_ctx.rxlen) : 0u);
+
+            if (room == 0u) {
+                /* 缓冲区已满：记录并断开连接以避免协议状态不一致（也可改为环形缓冲策略） */
 #if TCP_MULTI_DEBUG
-                TCP_DBG("[TCP-SINGLE] WARNING: Buffer full! Clearing %u bytes. Modbus stack not processing data!\r\n", 
-                        (unsigned)s_ctx.rxlen);
+                TCP_DBG("[TCP-SINGLE] ERROR: RX buffer overflow (pend=%u), closing client\r\n", (unsigned)s_ctx.rxlen);
 #endif
-                
-                /* 输出缓冲区内容用于调试 */
-#if TCP_MULTI_DEBUG
-                TCP_DBG("[TCP-SINGLE] Buffer content (first 32 bytes): ");
-                for(i = 0; i < (s_ctx.rxlen < 32 ? s_ctx.rxlen : 32); i++) {
-                    TCP_DBG("%02X ", s_ctx.rxbuf[i]);
-                }
-                TCP_DBG("\r\n");
-#endif
-                
-                s_ctx.rxlen = 0;  // 强制清空缓冲区
-                room = TCP_RX_MAX;
+                tcp_srv_single_close();
+                return;
             }
 
-            if (room > 0) {
-                chunk = (avail > room) ? room : avail;
-                r = recv(s_ctx.client_sn, s_ctx.rxbuf + s_ctx.rxlen, chunk);
-                
-                if (r > 0) {
-                    s_ctx.rxlen += (uint16_t)r;
-#if TCP_MULTI_DEBUG
-                    TCP_DBG("[TCP-SINGLE] RX +%ldB, pend=%u\r\n", (long)r, (unsigned)s_ctx.rxlen);
-#endif
-                }
+            chunk = (avail > room) ? room : avail;
+            r = recv(s_ctx.client_sn, s_ctx.rxbuf + s_ctx.rxlen, chunk);
+            if (r <= 0) {
+                /* recv 失败或无更多数据 */
+                break;
             }
-        }
+            s_ctx.rxlen = (uint16_t)(s_ctx.rxlen + r);
+#if TCP_MULTI_DEBUG
+            TCP_DBG("[TCP-SINGLE] RX +%ldB, pend=%u\r\n", (long)r, (unsigned)s_ctx.rxlen);
+#endif
+            avail = (uint16_t)(avail - (uint16_t)r);
+
+            /* 被动拉模式：只把数据放到 s_ctx.rxbuf，具体组帧/解析由上层 porttcp.c 的 vMBPortTCPPool() 来处理 */
+            /* s_ctx.rxlen 已经更新，上层的 tcp_srv_single_peek / tcp_srv_single_read 会读取这些数据 */
+        } /* end while (avail) */
     }
 }
 

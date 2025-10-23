@@ -25,13 +25,13 @@ OS_STK LED1_TASK_STK[LED1_STK_SIZE];
 #define ETHERNET_BUF_MAX_SIZE (1024 * 2)
 /* network information */
 wiz_NetInfo default_net_info = {
-    {0x00, 0x08, 0xdc, 0x12, 0x22, 0x12},   // mac
-    {192, 168, 103, 200},                   // ip
-    {192, 168, 103, 1},                     // gw
-    {255, 255, 255, 0},                     // sn
-    {8, 8, 8, 8},                           // dns
-    NETINFO_STATIC                          // DHCP设置   NETINFO_DHCP    
-}; 
+    {0x00, 0x08, 0xdc, 0x12, 0x22, 0x12},   /* mac */
+    {192, 168, 103, 200},                   /* ip  */
+    {255, 255, 255, 0},                     /* sn  */
+    {192, 168, 103, 1},                     /* gw  */
+    {8, 8, 8, 8},                           /* dns */
+    NETINFO_STATIC                          /* dhcp */
+};
 uint8_t ethernet_buf[ETHERNET_BUF_MAX_SIZE] = {0};
 uint16_t local_port = 502;
 
@@ -105,8 +105,8 @@ void tcp_task(void *pdata)
     {
         poll_count++;
 
-        /* 驱动TCP层 */
-        //tcp_srv_single_poll();
+    /* 驱动TCP层（被动拉模式）：负责读硬件 socket、append 到累加缓冲并组帧 */
+    vMBPortTCPPool();
 
         /* 处理Modbus请求 */
         eStatus = eMBPoll();

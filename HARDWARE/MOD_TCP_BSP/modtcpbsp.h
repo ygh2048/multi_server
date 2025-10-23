@@ -76,8 +76,7 @@ tcp_link_t tcp_srv_link_state(void);                        /* 当前 PHY 状态
 /* ================= 单连接模式函数声明 ================= */
 #else
 
-void process_modbus_request(uint8_t *frame, uint16_t frame_len);
-
+/* 单连接模式接口：上层通过 vMBPortTCPPool() / tcp_srv_single_poll() 被动拉取数据 */
 /* 生命周期 */
 void      tcp_srv_single_init(uint16_t port);   /* 初始化单连接TCP服务器 */
 void      tcp_srv_single_deinit(void);          /* 关闭TCP服务器 */
