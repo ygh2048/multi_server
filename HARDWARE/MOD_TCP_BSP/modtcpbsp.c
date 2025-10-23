@@ -1,10 +1,25 @@
 #include "modtcpbsp.h"
-#include "tcp_server_multi_socket.h"
 #include "socket.h"
 #include "stdio.h"
 #include "wizchip_conf.h"
 #include "sys.h"
 #include <string.h>
+
+
+
+static uint16_t       s_port = TCP_SRV_PORT;  /* 监听端口（统一端口） */
+static uint8_t        s_link_last = 0xFF;     /* 上一次 PHY 状态：0xFF=未知 */
+static uint8_t        s_ka_5s = 2;            /* keepalive 单位 5s（默认≈10s） */
+
+
+/* ------------- 内部上下文 ------------- */
+typedef struct {
+    uint8_t  rxbuf[TCP_RX_MAX];
+    uint16_t rxlen;             /* 已收未读的字节数 */
+    uint8_t  connected;         /* 是否已建立连接 */
+    uint8_t  keepalive_set;     /* 是否已设置过 keepalive */
+    uint8_t  client_sn;         /* 客户端socket编号 */
+} tcp_single_ctx_t;
 
 
 /* ------------- 内部上下文 ------------- */
@@ -15,10 +30,15 @@ typedef struct {
     uint8_t  keepalive_set;     /* 是否已设置过 keepalive */
 } tcp_sock_ctx_t;
 
+
+static tcp_single_ctx_t s_ctx;
+static uint8_t          s_listen_sn = 0;        /* 监听socket固定为0 */
+
+#ifdef TCP_MULTI_CONNECTION_MODE
+
 static tcp_sock_ctx_t s_ctx[TCP_MAX_SOCK];
-static uint16_t       s_port = TCP_SRV_PORT;  /* 监听端口（统一端口） */
-static uint8_t        s_link_last = 0xFF;     /* 上一次 PHY 状态：0xFF=未知 */
-static uint8_t        s_ka_5s = 2;            /* keepalive 单位 5s（默认≈10s） */
+
+
 
 /* ------------- 内部工具函数 ------------- */
 /* 设置/激活 keepalive（W5500: Sn_KPALVTR，单位5s；需先发一个字节激活） */
@@ -28,7 +48,6 @@ static void apply_keepalive(uint8_t sn)
         if (s_ka_5s == 0) s_ka_5s = 1;
         setSn_KPALVTR(sn, s_ka_5s);
         /* 发送1字节触发 keepalive 路径 */
-        (void)send(sn, (uint8_t*)"\0", 1);
         s_ctx[sn].keepalive_set = 1;
 #if TCP_MULTI_DEBUG
         TCP_DBG("[TCP] sock%u: keepalive ~%us (step5s=%u)\r\n",
@@ -355,34 +374,18 @@ tcp_link_t tcp_srv_link_state(void)
 }
 
 
+#endif
 
+#ifndef TCP_MULTI_CONNECTION_MODE
 
-#include "tcp_server_single_socket.h"
-
-
-
-
-
-/* ------------- 内部上下文 ------------- */
-typedef struct {
-    uint8_t  rxbuf[TCP_RX_MAX];
-    uint16_t rxlen;             /* 已收未读的字节数 */
-    uint8_t  connected;         /* 是否已建立连接 */
-    uint8_t  keepalive_set;     /* 是否已设置过 keepalive */
-    uint8_t  client_sn;         /* 客户端socket编号 */
-} tcp_single_ctx_t;
-
-static tcp_single_ctx_t s_ctx;
-static uint8_t          s_listen_sn = 0;        /* 监听socket固定为0 */
 /* ------------- 内部工具函数 ------------- */
 /* 设置/激活 keepalive */
+
 static void apply_keepalive_single(uint8_t sn)
 {
     if (!s_ctx.keepalive_set) {
         if (s_ka_5s == 0) s_ka_5s = 1;
         setSn_KPALVTR(sn, s_ka_5s);
-        /* 发送1字节触发 keepalive 路径 */
-        (void)send(sn, (uint8_t*)"\0", 1);
         s_ctx.keepalive_set = 1;
 #if TCP_SINGLE_DEBUG
         TCP_DBG("[TCP-SINGLE] sock%u: keepalive ~%us (step5s=%u)\r\n",
@@ -390,6 +393,8 @@ static void apply_keepalive_single(uint8_t sn)
 #endif
     }
 }
+
+
 
 /* 监测 PHY 变化 */
 static void monitor_phy_single(void)
@@ -478,7 +483,11 @@ void tcp_srv_single_deinit(void)
 void tcp_srv_single_poll(void)
 {
     uint8_t sr;
-
+    uint16_t chunk;
+    int32_t r;
+    uint16_t room ;
+    int i;
+            uint16_t avail;
     /* 先看 PHY；断链则不做后续 */
     monitor_phy_single();
     if (s_link_last == PHY_LINK_OFF) {
@@ -488,102 +497,56 @@ void tcp_srv_single_poll(void)
     /* 检查监听socket状态 */
     sr = getSn_SR(s_listen_sn);
 
-    if (sr == SOCK_LISTEN) {
-        /* 监听状态，检查是否有新连接 */
+    if (sr == SOCK_ESTABLISHED) {
+        /* 有客户端连接建立 */
         if (!s_ctx.connected) {
-            /* 接受新连接 */
-            s_ctx.client_sn = accept(s_listen_sn);
-            if (s_ctx.client_sn != 0xFF) {
-                s_ctx.connected = 1u;
-#if TCP_SINGLE_DEBUG
-                TCP_DBG("[TCP-SINGLE] New connection on sock%u\r\n", (unsigned)s_ctx.client_sn);
+            s_ctx.connected = 1u;
+            s_ctx.client_sn = s_listen_sn;
+#if TCP_MULTI_DEBUG
+            TCP_DBG("[TCP-SINGLE] New connection established\r\n");
 #endif
-                apply_keepalive_single(s_ctx.client_sn);
-            }
+            apply_keepalive_single(s_ctx.client_sn);
         }
-    }
-    else if (sr == SOCK_ESTABLISHED) {
-        /* 这是客户端连接socket的状态 */
-        if (s_ctx.connected) {
-            /* 处理接收数据 */
-            uint16_t avail;
-            avail = getSn_RX_RSR(s_ctx.client_sn);
-            while (avail) {
-                uint16_t room;
-                uint16_t chunk;
-                int32_t  r;
 
-                room = (TCP_RX_MAX > s_ctx.rxlen) ? (TCP_RX_MAX - s_ctx.rxlen) : 0u;
-                if (room == 0u) {
-                    /* 已满：丢弃一部分，避免死锁 */
-                    uint8_t tmp[64];
-                    chunk = (avail > (uint16_t)sizeof(tmp)) ? (uint16_t)sizeof(tmp) : avail;
-                    r = recv(s_ctx.client_sn, tmp, chunk);
-#if TCP_SINGLE_DEBUG
-                    if (r > 0) {
-                        TCP_DBG("[TCP-SINGLE] DROP %ldB (RX full)\r\n", (long)r);
-                    }
+        /* 处理接收数据 */
+
+        avail = getSn_RX_RSR(s_ctx.client_sn);
+        
+        if (avail > 0) {
+            room = TCP_RX_MAX - s_ctx.rxlen;
+            
+            if (room == 0) {
+                /* 缓冲区已满 - 强制清空并输出警告 */
+#if TCP_MULTI_DEBUG
+                TCP_DBG("[TCP-SINGLE] WARNING: Buffer full! Clearing %u bytes. Modbus stack not processing data!\r\n", 
+                        (unsigned)s_ctx.rxlen);
 #endif
-                    if (r <= 0) {
-                        break;
-                    }
-                    avail -= (uint16_t)r;
-                    continue;
+                
+                /* 输出缓冲区内容用于调试 */
+#if TCP_MULTI_DEBUG
+                TCP_DBG("[TCP-SINGLE] Buffer content (first 32 bytes): ");
+                for(i = 0; i < (s_ctx.rxlen < 32 ? s_ctx.rxlen : 32); i++) {
+                    TCP_DBG("%02X ", s_ctx.rxbuf[i]);
                 }
+                TCP_DBG("\r\n");
+#endif
+                
+                s_ctx.rxlen = 0;  // 强制清空缓冲区
+                room = TCP_RX_MAX;
+            }
 
+            if (room > 0) {
                 chunk = (avail > room) ? room : avail;
                 r = recv(s_ctx.client_sn, s_ctx.rxbuf + s_ctx.rxlen, chunk);
-                if (r <= 0) {
-                    break;
-                }
-                s_ctx.rxlen += (uint16_t)r;
-#if TCP_SINGLE_DEBUG >= 2
-                TCP_DBG("[TCP-SINGLE] RX +%ldB, pend=%u\r\n",
-                        (long)r, (unsigned)s_ctx.rxlen);
+                
+                if (r > 0) {
+                    s_ctx.rxlen += (uint16_t)r;
+#if TCP_MULTI_DEBUG
+                    TCP_DBG("[TCP-SINGLE] RX +%ldB, pend=%u\r\n", (long)r, (unsigned)s_ctx.rxlen);
 #endif
-                avail -= (uint16_t)r;
+                }
             }
         }
-    }
-    else if (sr == SOCK_CLOSE_WAIT) {
-#if TCP_SINGLE_DEBUG
-        TCP_DBG("[TCP-SINGLE] CLOSE_WAIT -> disconnect\r\n");
-#endif
-        (void)disconnect(s_listen_sn);
-        s_ctx.connected = 0u;
-        s_ctx.keepalive_set = 0u;
-        s_ctx.rxlen = 0u;
-        s_ctx.client_sn = 0xFF;
-        
-        /* 重新监听 */
-        if (socket(s_listen_sn, Sn_MR_TCP, s_port, 0x00) == s_listen_sn) {
-            (void)listen(s_listen_sn);
-        }
-    }
-    else if (sr == SOCK_CLOSED) {
-        /* 连接关闭，重新监听 */
-        if (s_ctx.connected) {
-#if TCP_SINGLE_DEBUG
-            TCP_DBG("[TCP-SINGLE] CLOSED\r\n");
-#endif
-        }
-        s_ctx.connected     = 0u;
-        s_ctx.keepalive_set = 0u;
-        s_ctx.rxlen         = 0u;
-        s_ctx.client_sn     = 0xFF;
-
-        if (socket(s_listen_sn, Sn_MR_TCP, s_port, 0x00) == s_listen_sn) {
-            (void)listen(s_listen_sn);
-#if TCP_SINGLE_DEBUG
-            TCP_DBG("[TCP-SINGLE] LISTEN again\r\n");
-#endif
-        }
-    }
-    else if (sr == SOCK_INIT) {
-        (void)listen(s_listen_sn);
-#if TCP_SINGLE_DEBUG
-        TCP_DBG("[TCP-SINGLE] INIT -> LISTEN\r\n");
-#endif
     }
 }
 
@@ -599,7 +562,6 @@ int tcp_srv_single_peek(const uint8_t **pbuf, uint16_t *plen)
     }
     return 0; /* 无数据 */
 }
-
 int tcp_srv_single_read(uint8_t *dst, uint16_t maxlen, uint16_t *outlen)
 {
     const uint8_t *p;
@@ -611,18 +573,30 @@ int tcp_srv_single_read(uint8_t *dst, uint16_t maxlen, uint16_t *outlen)
     }
 
     c = (n > maxlen) ? maxlen : n;
-    if (dst != NULL && c > 0u) {
+
+    if (c > 0u && dst != NULL) {
         memcpy(dst, p, c);
     }
 
-    s_ctx.rxlen = 0u; /* 消费掉 */
+    if (c < n) {
+        /* 仅消费前 c 字节，把剩余 n-c 前移保留，避免丢包/半包 */
+        memmove(s_ctx.rxbuf, s_ctx.rxbuf + c, (size_t)(n - c));
+        s_ctx.rxlen = (uint16_t)(n - c);
+    } else {
+        s_ctx.rxlen = 0u;
+    }
+
     if (outlen != NULL) *outlen = c;
 
-#if TCP_SINGLE_DEBUG
-    TCP_DBG("[TCP-SINGLE] READ %uB\r\n", (unsigned)c);
+#if TCP_SINGLE_DEBUG >= 2
+    TCP_DBG("[TCP-SINGLE] READ %u/%u (remain=%u)\r\n",
+            (unsigned)c, (unsigned)n, (unsigned)s_ctx.rxlen);
 #endif
-    return 1; /* 成功读到 */
+    return 1;
 }
+
+
+
 
 int tcp_srv_single_send(const uint8_t *src, uint16_t len)
 {
@@ -711,15 +685,18 @@ uint8_t tcp_srv_single_get_client_sn(void)
 }
 
 
+/* 获取缓冲区使用情况 */
+uint16_t tcp_srv_single_get_rx_buffer_usage(void)
+{
+    return s_ctx.rxlen;
+}
 
+uint16_t tcp_srv_single_get_rx_buffer_size(void)
+{
+    return TCP_RX_MAX;
+}
 
-
-
-
-
-
-
-
+#endif
 
 
 

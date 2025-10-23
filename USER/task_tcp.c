@@ -62,25 +62,33 @@ static uint8_t rxbuf[TCP_RX_MAX];
 
 void tcp_task(void *pdata)
 {
-    printf("%s Modbus/TCP Server start\r\n", _WIZCHIP_ID_);
+    eMBErrorCode eStatus;
+    static uint32_t last_debug_time = 0;
+    static uint32_t poll_count = 0;
+    static uint32_t last_print_time = 0;  /* 用于每秒打印数据 */
 
-    /* --- W5500 + 网络初始化 --- */
+    uint16_t rx_rsr;
+    uint16_t rx_rd;
+    uint32_t current_time;
+    const uint8_t *pbuf;
+    uint16_t plen;
+    int i;
+
+    printf("W5500 Modbus/TCP Server start\r\n");
+
+    /* --- 初始化部分保持不变 --- */
     wizchip_reset();
     delay_ms(10);
     wizchip_initialize();
     delay_ms(10);
     network_init(ethernet_buf, &default_net_info);
     delay_ms(10);
+    SPI2_SetSpeed(SPI_BaudRatePrescaler_8);
 
-    /* SPI 提速 */
-    SPI2_SetSpeed(SPI_BaudRatePrescaler_8);  // 或者 _32 看线长/连线质量
-
-    /* --- 打开多 socket 共同监听 502 --- */
-    tcp_srv_init(MODBUS_PORT);               
-    tcp_srv_set_keepalive(10);                // 设置 Keepalive，约10秒
+    tcp_srv_single_init(MODBUS_PORT);               
+    tcp_srv_single_set_keepalive(10);
     printf("[TCP] Listening on port %u\r\n", MODBUS_PORT);
 
-    /* --- FreeModbus 初始化 --- */
     if (eMBTCPInit(MODBUS_PORT) != MB_ENOERR) {
         printf("[MB] eMBTCPInit failed!\r\n");
         while (1) { delay_ms(1000); }
@@ -92,21 +100,52 @@ void tcp_task(void *pdata)
     }
     printf("[MB] Modbus slave ready on %u\r\n", MODBUS_PORT);
 
+    /* 主循环 */
     for (;;)
     {
-        /* 1) 先让以太网/TCP 层跑起来，把收到的 TCP 帧喂给 FreeModbus */
-        tcp_srv_poll();  // 调用底层的 TCP 轮询函数
+        poll_count++;
 
-        /* 2) 轮询 Modbus 协议栈，处理 Modbus 请求 */
-        (void)eMBPoll(); // 处理 Modbus 请求
+        /* 驱动TCP层 */
+        //tcp_srv_single_poll();
 
-        /* 3) （可选）你可以周期性更新输入寄存器/保持寄存器等 */
-        // 例如：MBUSR_SetInputByAddr(1, some_sensor_value);
+        /* 处理Modbus请求 */
+        eStatus = eMBPoll();
 
-        delay_ms(1); // 1ms 的延时（控制轮询频率）
+        /* 每秒输出一次接收到的数据 */
+        current_time = OSTimeGet();
+        /* 每2秒输出一次详细状态 */
+        if (current_time - last_debug_time > 1000) {
+            last_debug_time = current_time;
+            
+            printf("[DEBUG] === Modbus TCP Status ===\r\n");
+            printf("[DEBUG] Poll count: %lu, eMBPoll result: %d\r\n", poll_count, eStatus);
+            printf("[DEBUG] TCP Connected: %s, RX Buffer: %u/%u bytes\r\n", 
+                   tcp_srv_single_is_connected() ? "Yes" : "No",
+                   tcp_srv_single_get_rx_buffer_usage(),
+                   tcp_srv_single_get_rx_buffer_size());
+            
+            /* 输出TCP socket状态 */
+            printf("[DEBUG] Socket state: ");
+            switch(getSn_SR(0)) {
+                case SOCK_CLOSED: printf("CLOSED"); break;
+                case SOCK_INIT: printf("INIT"); break;
+                case SOCK_LISTEN: printf("LISTEN"); break;
+                case SOCK_ESTABLISHED: printf("ESTABLISHED"); break;
+                case SOCK_CLOSE_WAIT: printf("CLOSE_WAIT"); break;
+                default: printf("UNKNOWN(%u)", getSn_SR(0)); break;
+            }
+            printf("\r\n");
+            
+            /* 输出TCP接收缓冲区状态 */
+            rx_rsr = getSn_RX_RSR(0);
+            rx_rd = getSn_RX_RD(0);
+            printf("[DEBUG] TCP HW Buffer: RSR=%u, RD=%u\r\n", rx_rsr, rx_rd);
+            printf("[DEBUG] ============================\r\n");
+        }
+
+        delay_ms(1);
     }
 }
-
 
 
 
@@ -116,9 +155,9 @@ void led1_task(void *pdata)
 	while(1)
 	{
 		LED1=0;
-		delay_ms(1300);
+		delay_ms(1500);
 		LED1=1;
-		delay_ms(1300);
+		delay_ms(1500);
 	};
 }
 

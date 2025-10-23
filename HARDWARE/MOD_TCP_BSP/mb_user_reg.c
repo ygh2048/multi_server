@@ -1,4 +1,3 @@
-// mb_user_reg.c  (C89 ????)
 #include "mb.h"
 #include "mbport.h"
 #include "mb_user_reg.h"
@@ -6,22 +5,22 @@
 #include "led.h"
 
 /* ???????????? */
-#define REG_HOLDING_START   1
+#define REG_HOLDING_START   0x0000
 #define REG_HOLDING_N       100
 
-#define REG_INPUT_START     1
+#define REG_INPUT_START     0x0000
 #define REG_INPUT_N         100
 
-#define REG_COILS_START     1
+#define REG_COILS_START     0x0000
 #define REG_COILS_N         64
 
-#define REG_DISC_START      1
+#define REG_DISC_START      0x0000
 #define REG_DISC_N          64
 
 
 
-#define LED0_COIL_ADDR 1  // 地址 1 控制 LED0
-#define LED1_COIL_ADDR 2  // 地址 2 控制 LED1
+#define LED0_COIL_ADDR 0x0001  // 地址 1 控制 LED0
+#define LED1_COIL_ADDR 0x0002  // 地址 2 控制 LED1
 
 
 

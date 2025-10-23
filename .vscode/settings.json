@@ -9,6 +9,9 @@
         "modtcpbsp.h": "c",
         "wiz_platform.h": "c",
         "w5500.h": "c",
-        "device.h": "c"
+        "device.h": "c",
+        "socket.h": "c",
+        "compare": "c",
+        "typeinfo": "c"
     }
 }

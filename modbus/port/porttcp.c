@@ -1,207 +1,239 @@
-/*
- * FreeModbus TCP Port for W5500 multi-socket base (tcp_srv_*)
- * - 支持多 socket 同端口监听
- * - 按 MBAP 长度组整帧后再交给栈
- * - 通过 printf 调试（受 TCP_MULTI_DEBUG 控制）
- */
-
+/* ==== Modbus/TCP port: minimal linear-accumulator framer (C90) ==== */
 #include <stdio.h>
 #include <string.h>
 #include "port.h"
 #include "mb.h"
 #include "mbport.h"
+#include "modtcpbsp.h"  /* tcp_srv_single_* */
 
-#include "modtcpbsp.h"   
+#define TCP_DEBUG 1
+#define TCP_DEBUG_PREFIX "[MBTCP-SIMPLE]"
 
-#ifndef MB_TCP_DEFAULT_PORT
-#define MB_TCP_DEFAULT_PORT    502
+/* Modbus TCP: 7B MBAP + PDU(<=253) -> 单帧最大 ≈ 260B */
+#ifndef MB_TCP_FRAME_MAX
+#define MB_TCP_FRAME_MAX  260
 #endif
 
-/* ========== MBAP 下标 ==========
- * | TransactionID(2) | ProtocolID(2) | Length(2) | UnitID(1) | PDU...
- * 长度字段为网络序，含 UnitID(1) + PDU 长度 -> 整帧总长 = 7 + Length
- */
-#define MB_TCP_UID     6
-#define MB_TCP_LEN     4
-#define MB_TCP_FUNC    7
-
-/* ========== 端口层内部缓存 ==========
- * 你可以按需调大（与 modtcpbsp.h 的 TCP_RX_MAX 相互独立）
- */
-#ifndef MB_TCP_BUF_SIZE
-#define MB_TCP_BUF_SIZE  (260 + 7) /* 常见 PDU + MBAP 足够 */
+/* 线性累加缓冲：能同时容纳数帧即可，太大无意义。*/
+#ifndef MB_TCP_ACC_SIZE
+#define MB_TCP_ACC_SIZE   (MB_TCP_FRAME_MAX * 3) /* 780B */
 #endif
 
-static UCHAR  ucTCPBuf[MB_TCP_BUF_SIZE];
-static USHORT usTCPBufLen = 0;
+/* MBAP 索引 */
+#define MB_TCP_TID_H 0
+#define MB_TCP_TID_L 1
+#define MB_TCP_PID_H 2
+#define MB_TCP_PID_L 3
+#define MB_TCP_LEN_H 4
+#define MB_TCP_LEN_L 5
+#define MB_TCP_UID   6
+#define MB_TCP_FUNC  7
 
-/* 记录“当前处理的连接”，用于 SendResponse 回发给同一 socket */
-static UCHAR  ucCurConnSn = 0xFF;
+/* ---- 对 FreeModbus 暴露的整帧缓冲 ---- */
+static UCHAR  ucTCPBuf[MB_TCP_FRAME_MAX];
+static USHORT usTCPBufLen;
+static volatile UCHAR s_frame_ready;
 
-/* -------------------- FreeModbus 端口 API -------------------- */
+/* ---- 线性累加缓冲（唯一写入点） ---- */
+static UCHAR  s_acc[MB_TCP_ACC_SIZE];
+static USHORT s_acc_len;
 
-BOOL xMBTCPPortInit( USHORT usTCPPort )
+/* ---- 工具：校验 MBAP 并算总长 ---- */
+static int mbap_ok_and_total(const UCHAR *h7, USHORT *p_total)
 {
-    USHORT port;
-
-    if( usTCPPort == 0 ) {
-        port = (USHORT)MB_TCP_DEFAULT_PORT;
-    } else {
-        port = usTCPPort;
+    USHORT pid, len, total;
+    pid = (USHORT)((((USHORT)h7[MB_TCP_PID_H]) << 8) | (USHORT)h7[MB_TCP_PID_L]);
+    if (pid != 0) {
+#if TCP_DEBUG
+        printf("%s PID invalid: 0x%04X\r\n", TCP_DEBUG_PREFIX, (unsigned)pid);
+#endif
+        return 0;
     }
+    len = (USHORT)((((USHORT)h7[MB_TCP_LEN_H]) << 8) | (USHORT)h7[MB_TCP_LEN_L]);
+    /* len 至少包含1字节 UnitId；且 6+len 不得超过单帧上限 */
+    if (len < 1U || (USHORT)(6U + len) > MB_TCP_FRAME_MAX) {
+#if TCP_DEBUG
+        printf("%s LEN invalid: %u\r\n", TCP_DEBUG_PREFIX, (unsigned)len);
+#endif
+        return 0;
+    }
+    total = (USHORT)(6U + len);
+    *p_total = total;
+    return 1;
+}
 
-#if TCP_MULTI_DEBUG
-    TCP_DBG("[MBTCP] PortInit: port=%u\r\n", (unsigned)port);
+/* ---- 把 TCP 数据 append 到累加缓冲（唯一入口） ---- */
+static void pump_tcp_to_acc(void)
+{
+    const UCHAR *p;
+    USHORT plen;
+    USHORT got;
+    UCHAR tmp[256];
+    USHORT chunk;
+    int ok;
+
+    for (;;) {
+        ok = tcp_srv_single_peek(&p, &plen);
+        if (!ok || plen == 0U) break;
+
+        while (plen > 0U) {
+            chunk = (plen > (USHORT)sizeof(tmp)) ? (USHORT)sizeof(tmp) : plen;
+            if (!tcp_srv_single_read(tmp, chunk, &got)) return;
+            if (got == 0U) return;
+
+            /* 空间不够就清空累加缓冲（防御式处理，宁可丢数据不崩溃） */
+            if ((USHORT)(s_acc_len + got) > MB_TCP_ACC_SIZE) {
+#if TCP_DEBUG
+                printf("%s ACC overflow -> reset (acc=%u, got=%u)\r\n",
+                       TCP_DEBUG_PREFIX, (unsigned)s_acc_len, (unsigned)got);
+#endif
+                s_acc_len = 0U;
+                s_frame_ready = 0U;
+            }
+
+            /* append */
+            memcpy(&s_acc[s_acc_len], tmp, got);
+            s_acc_len = (USHORT)(s_acc_len + got);
+
+#if TCP_DEBUG
+            { USHORT show = (got > 24U) ? 24U : got; USHORT i;
+              printf("%s APPEND %uB: ", TCP_DEBUG_PREFIX, (unsigned)got);
+              for (i = 0; i < show; i++) printf("%02X ", (unsigned)tmp[i]);
+              printf("\r\n");
+            }
 #endif
 
-    /* 打开多 socket 并监听同一个端口 */
-    tcp_srv_init(port);
+            if (plen >= got) plen = (USHORT)(plen - got);
+            else plen = 0U;
+        }
+    }
+}
 
-    /* 可选：设置 keepalive（W5500 5s 步进，这里 ~10s） */
-    tcp_srv_set_keepalive(10);
+/* ---- 在累加缓冲里组帧；可一次组多帧，但只对外暴露“下一帧” ---- */
+static void try_extract_frames(void)
+{
+    USHORT total;
 
-    /* 置空当前连接与缓存 */
-    ucCurConnSn = 0xFF;
-    usTCPBufLen = 0;
+    /* 外面还没取走上一帧，就不继续了 */
+    if (s_frame_ready) return;
 
+    /* 尝试连续取帧 */
+    for (;;) {
+        if (s_acc_len < 7U) return; /* 不够一个 MBAP */
+
+        /* 判头：如果不合法，丢1字节重试 */
+        if (!mbap_ok_and_total(&s_acc[0], &total)) {
+            /* slide-1 */
+            memmove(&s_acc[0], &s_acc[1], (size_t)(s_acc_len - 1U));
+            s_acc_len--;
+            continue;
+        }
+
+        /* 需要更多数据 */
+        if (s_acc_len < total) return;
+
+        /* 抽出一帧交给 FreeModbus */
+        memcpy(ucTCPBuf, &s_acc[0], total);
+        usTCPBufLen   = total;
+        s_frame_ready = 1U;
+
+#if TCP_DEBUG
+        { USHORT i, show = (total > 32U) ? 32U : total;
+          printf("%s FRAME READY %uB: ", TCP_DEBUG_PREFIX, (unsigned)total);
+          for (i = 0; i < show; i++) printf("%02X ", (unsigned)ucTCPBuf[i]);
+          printf("\r\n");
+        }
+#endif
+
+        /* 从累加缓冲中移除这帧 */
+        if (s_acc_len > total) {
+            memmove(&s_acc[0], &s_acc[total], (size_t)(s_acc_len - total));
+            s_acc_len = (USHORT)(s_acc_len - total);
+        } else {
+            s_acc_len = 0U;
+        }
+
+        /* 只暴露“一帧”，让上层及时取走；剩余帧下次再交 */
+        return;
+    }
+}
+
+/* ---- FreeModbus 端口 API ---- */
+BOOL xMBTCPPortInit(USHORT usTCPPort)
+{
+    USHORT port = (usTCPPort == 0U) ? (USHORT)502 : usTCPPort;
+
+#if TCP_DEBUG
+    printf("%s PortInit: %u\r\n", TCP_DEBUG_PREFIX, (unsigned)port);
+#endif
+
+    tcp_srv_single_init(port);
+    tcp_srv_single_set_keepalive(10);
+
+    s_acc_len     = 0U;
+    s_frame_ready = 0U;
+    usTCPBufLen   = 0U;
     return TRUE;
 }
 
-void vMBTCPPortClose( void )
+void vMBTCPPortClose(void)
 {
-#if TCP_MULTI_DEBUG
-    TCP_DBG("[MBTCP] PortClose\r\n");
+#if TCP_DEBUG
+    printf("%s PortClose\r\n", TCP_DEBUG_PREFIX);
 #endif
-    tcp_srv_deinit();
-    ucCurConnSn = 0xFF;
-    usTCPBufLen = 0;
+    tcp_srv_single_deinit();
+    s_acc_len     = 0U;
+    s_frame_ready = 0U;
+    usTCPBufLen   = 0U;
 }
 
-void vMBTCPPortDisable( void )
+void vMBTCPPortDisable(void)
 {
-#if TCP_MULTI_DEBUG
-    TCP_DBG("[MBTCP] PortDisable -> close_all\r\n");
+#if TCP_DEBUG
+    printf("%s PortDisable\r\n", TCP_DEBUG_PREFIX);
 #endif
-    tcp_srv_close_all();
-    ucCurConnSn = 0xFF;
-    usTCPBufLen = 0;
+    tcp_srv_single_close();
+    s_acc_len     = 0U;
+    s_frame_ready = 0U;
+    usTCPBufLen   = 0U;
 }
 
-/* 供你的主循环调用：先驱动底座轮询 */
-void vMBPortTCPPool( void )
+/* 由上层周期调用（或你原先的 vMBPortTCPPool 包装）：驱动TCP+组帧 */
+void vMBPortTCPPool(void)
 {
-    /* 兼容你原文件的命名，内部做的事情就是底座 poll */
-    tcp_srv_poll();
+    tcp_srv_single_poll();   /* 仅此处读TCP */
+    pump_tcp_to_acc();       /* append 到线性累加缓冲 */
+    try_extract_frames();    /* 从累加缓冲里抽帧 */
 }
 
 BOOL xMBTCPPortGetRequest(UCHAR **ppucMBTCPFrame, USHORT *usTCPLength)
 {
-    uint8_t sn;
-    const uint8_t *p;
-    uint16_t plen;
-    uint16_t want;
-    uint16_t mbap_len;
-    uint16_t got;
-    int ok;
-    int i;
+    /* 兜底推进一次，避免上层轮询慢时卡住 */
+    vMBPortTCPPool();
 
-    /* 先驱动底座，让它把数据搬到内部每 socket 的缓冲区 */
-    tcp_srv_poll();  // 确保这一步被调用并处理完请求
+    if (!s_frame_ready) return FALSE;
+    *ppucMBTCPFrame = ucTCPBuf;
+    *usTCPLength    = usTCPBufLen;
 
-    ok = tcp_srv_peek(&sn, &p, &plen);
-    if (!ok || plen < 7) {
-        /* 如果没有收到数据或数据未完成，打印调试信息并退出 */
-        TCP_DBG("[MBTCP] No data or MBAP not full (plen=%u)\r\n", plen);
-        return FALSE;  /* 没数据 or MBAP 未满 */
-    }
-
-    /* 打印调试信息，查看接收到的数据 */
-    TCP_DBG("[MBTCP] RX: sn=%u plen=%u\n", (unsigned)sn, plen);
-    for (i = 0; i < plen; i++) {
-        TCP_DBG("[MBTCP] 0x%02X ", p[i]);
-        if ((i + 1) % 16 == 0) {
-            TCP_DBG("\n");
-        }
-    }
-    TCP_DBG("\n");
-
-    /* 计算 MBAP 长度（从帧头的 Length 字段读取） */
-    mbap_len = ((uint16_t)p[MB_TCP_LEN] << 8) | (uint16_t)p[MB_TCP_LEN + 1];
-    want = (uint16_t)(7u + mbap_len);
-
-    if (plen < want) {
-        /* 如果数据还不完整，打印调试信息并退出 */
-        TCP_DBG("[MBTCP] Incomplete frame. want=%u, plen=%u\r\n", want, plen);
-        return FALSE;  /* 还没收齐一整帧 */
-    }
-
-    /* 打印调试信息，查看期望的完整帧长度 */
-    TCP_DBG("[MBTCP] Full frame received. want=%u, plen=%u\r\n", want, plen);
-
-    /* 读取完整的 Modbus 请求并传递给栈 */
-    if (want > MB_TCP_BUF_SIZE) return FALSE;
-    if (!tcp_srv_read(&sn, ucTCPBuf, want, &got)) {
-        /* 如果读取失败，打印调试信息并退出 */
-        TCP_DBG("[MBTCP] tcp_srv_read failed\r\n");
-        return FALSE;
-    }
-
-    if (got != want) {
-        /* 如果实际读取的字节数与期望的不符，打印调试信息 */
-        TCP_DBG("[MBTCP] Data mismatch. got=%u, want=%u\r\n", got, want);
-        return FALSE;
-    }
-
-    /* 打印接收到的完整 Modbus 请求数据 */
-    TCP_DBG("[MBTCP] Full request received: sn=%u len=%u func=%u\r\n",
-            (unsigned)sn, (unsigned)got, (unsigned)ucTCPBuf[MB_TCP_FUNC]);
-
-    /* 将收到的请求传递给 Modbus 协议栈 */
-    ucCurConnSn = sn;
-    usTCPBufLen = want;
-    *ppucMBTCPFrame = &ucTCPBuf[0];
-    *usTCPLength = usTCPBufLen;
-
+    /* 标记被取走，允许抽下一帧 */
+    s_frame_ready = 0U;
     return TRUE;
 }
 
-/* 把响应发回“上一次 GetRequest 的那个 socket” */
-
-
-BOOL xMBTCPPortSendResponse( const UCHAR *pucMBTCPFrame, USHORT usTCPLength )
+/* 直接把响应写回同一 socket（单连接方案） */
+BOOL xMBTCPPortSendResponse(const UCHAR *pucMBTCPFrame, USHORT usTCPLength)
 {
     int ret;
-
-    if (ucCurConnSn == 0xFF) {
-#if TCP_MULTI_DEBUG
-        TCP_DBG("[MBTCP] SEND: no active conn\r\n");
+#if TCP_DEBUG
+    printf("%s SEND %uB\r\n", TCP_DEBUG_PREFIX, (unsigned)usTCPLength);
 #endif
-        return FALSE;
-    }
-
-    ret = tcp_srv_send(ucCurConnSn, pucMBTCPFrame, usTCPLength);
-
-if (ret < 0) {
-#if TCP_MULTI_DEBUG
-    TCP_DBG("[MBTCP] Send failed. Error code: %d\r\n", ret);
-#endif
-    return FALSE;
-}
-
-#if TCP_MULTI_DEBUG
-    TCP_DBG("[MBTCP] RSP sn=%u len=%u ret=%d\r\n",
-            (unsigned)ucCurConnSn, (unsigned)usTCPLength, ret);
-#endif
-
-    usTCPBufLen = 0;
-
+    ret = tcp_srv_single_send(pucMBTCPFrame, usTCPLength);
     return (ret == 0) ? TRUE : FALSE;
 }
 
+/* 临界区（照旧） */
+void EnterCriticalSection(void) { __disable_irq(); }
+void ExitCriticalSection(void)  { __enable_irq();  }
 
-/* ----------- FreeModbus 需要的临界区封装（保持不变） ----------- */
-void EnterCriticalSection( void ) { __disable_irq(); }
-void ExitCriticalSection( void )  { __enable_irq();  }
-
-void vMBPortTCPPool(void);         /* 这是你新的轮询函数 */
+/* 兼容函数名（若上层调用这个） */
 void xMBPortTCPPool(void) { vMBPortTCPPool(); }

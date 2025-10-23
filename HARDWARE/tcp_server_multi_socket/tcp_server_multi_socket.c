@@ -186,7 +186,7 @@ int32_t multi_tcps_socket(uint8_t *buf, uint16_t localport)
             if (size < (DATA_BUF_SIZE + 1)) {
                 buf[size] = 0;
 #ifdef _LOOPBACK_DEBUG_
-                printf("%d:recv data:%s\r\n", socket_sn, buf);
+                printf("%s", buf);
 #endif
             }
 
