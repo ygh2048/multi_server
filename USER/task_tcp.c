@@ -65,14 +65,10 @@ void tcp_task(void *pdata)
     eMBErrorCode eStatus;
     static uint32_t last_debug_time = 0;
     static uint32_t poll_count = 0;
-    static uint32_t last_print_time = 0;  /* 用于每秒打印数据 */
 
     uint16_t rx_rsr;
     uint16_t rx_rd;
     uint32_t current_time;
-    const uint8_t *pbuf;
-    uint16_t plen;
-    int i;
 
     printf("W5500 Modbus/TCP Server start\r\n");
 

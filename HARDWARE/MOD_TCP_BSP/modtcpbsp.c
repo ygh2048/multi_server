@@ -31,13 +31,14 @@ typedef struct {
 } tcp_sock_ctx_t;
 
 
-static uint8_t          s_listen_sn = 0;        /* 监听socket固定为0 */
+/*
+ * s_listen_sn is only used by single-connection implementation. Declare it in
+ * the single-connection section to avoid "declared but not referenced" warning
+ * when compiled in multi-connection mode.
+ */
 
 #ifdef TCP_MULTI_CONNECTION_MODE
-
 static tcp_sock_ctx_t s_ctx[TCP_MAX_SOCK];
-
-
 
 /* ------------- 内部工具函数 ------------- */
 /* 设置/激活 keepalive（W5500: Sn_KPALVTR，单位5s；需先发一个字节激活） */

@@ -87,6 +87,23 @@ void      tcp_srv_close_all(void);              /* 关闭全部并重新 listen 
 void      tcp_srv_set_keepalive(uint8_t seconds_approx);  /* 约多少秒（W5500 是 5s 步进） */
 tcp_link_t tcp_srv_link_state(void);                        /* 当前 PHY 状态 */
 
+/* Single-mode API prototypes for compatibility when multi-connection is enabled */
+#ifdef TCP_MULTI_CONNECTION_MODE
+void      tcp_srv_single_init(uint16_t port);
+void      tcp_srv_single_deinit(void);
+void      tcp_srv_single_poll(void);
+int       tcp_srv_single_peek(const uint8_t **pbuf, uint16_t *plen);
+int       tcp_srv_single_read(uint8_t *dst, uint16_t maxlen, uint16_t *outlen);
+int       tcp_srv_single_send(const uint8_t *src, uint16_t len);
+void      tcp_srv_single_close(void);
+void      tcp_srv_single_set_keepalive(uint8_t seconds_approx);
+tcp_link_t tcp_srv_single_link_state(void);
+uint8_t   tcp_srv_single_is_connected(void);
+uint8_t   tcp_srv_single_get_client_sn(void);
+uint16_t  tcp_srv_single_get_rx_buffer_usage(void);
+uint16_t  tcp_srv_single_get_rx_buffer_size(void);
+#endif
+
 /* ================= 单连接模式函数声明 ================= */
 #else
 
