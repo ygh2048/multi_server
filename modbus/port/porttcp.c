@@ -1,4 +1,27 @@
-/* ==== Modbus/TCP port: minimal linear-accumulator framer (C90) ==== */
+/*
+ * porttcp.c
+ * ---------
+ * Modbus/TCP 端口层（Framer）—— 线性累加缓冲实现（兼容 C90）
+ *
+ * 设计说明：
+ * - 使用被动拉（poll）模型：BSP 负责 socket 的读写（recv/send），
+ *   端口层周期性调用 vMBPortTCPPool() 来驱动读取、追加到累加缓冲
+ *   并尝试解析完整的 MBAP+PDU 帧。
+ * - 单连接模式（当前文件）：使用一个全局累加缓冲 s_acc。多连接逻辑在
+ *   需要时由另一个分支/实现提供（per-socket 小缓冲）。
+ * - 错误处理采用保守策略：当检测到异常头部或缓冲溢出时，按策略丢弃
+ *   有问题的字节或重置累加缓冲，而不是造成崩溃。
+ *
+ * 重要概念：
+ * - MBAP 头部长度为 7 字节（TID(2) PID(2) LEN(2) UID(1)），其中 PID 必须为 0。
+ * - 整帧长度 = 6 + LEN（LEN 中包含 UnitId 的长度）。
+ * - 配置项见 modtcpbsp.h: MB_TCP_FRAME_MAX, MB_TCP_ACC_SIZE。
+ *
+ * 调试与日志：
+ * - 代码中使用 TCP_DEBUG/TCP_DEBUG_PREFIX 输出本地日志；在其他实现分支中，
+ *   也可能使用 MODTCP_DBG 宏以集中控制日志级别。避免在生产环境打印
+ *   大量十六进制转储以免串口刷屏。
+ */
 #include <stdio.h>
 #include <string.h>
 #include "port.h"

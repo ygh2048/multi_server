@@ -1,4 +1,40 @@
 #include "modtcpbsp.h"
+
+/*
+ * modtcpbsp.c
+ * ---------
+ * W5500-based TCP server BSP for Modbus/TCP.
+ *
+ * 概要：
+ * - 提供两种模式：单连接（tcp_srv_single_*）与多连接（tcp_srv_*），由
+ *   `modtcpbsp.h` 中的编译时宏 `TCP_MULTI_CONNECTION_MODE` 控制。
+ * - 单连接模式：只打开一个 socket（client socket），上层通过 tcp_srv_single_*
+ *   轮询/读取数据。资源占用最小，推荐用于常见 Modbus 从站场景。
+ * - 多连接模式：打开多个 socket（数量由 TCP_MAX_SOCK 决定），为每个 socket
+ *   维护独立状态和接收缓冲区，允许多个客户端并发连接（但组帧逻辑在端口层
+ *   仍需处理，每个 socket 有独立累加区）。
+ *
+ * 数据流（被动拉模型）：
+ * - BSP 负责和 W5500 交互（listen/accept/recv/send/close），并把接收到的原始
+ *   字节放入 rxbuf 或通过 tcp_srv_peek/read 提供给上层。
+ * - 上层（modbus/port/porttcp.c 的 vMBPortTCPPool）周期性调用 tcp_srv_* 的
+ *   peek/read，把数据追加到累加缓冲并尝试解析 MBAP 帧；一旦解析出完整帧，
+ *   上层会把帧交给 FreeModbus 处理，处理结果再通过 tcp_srv_send/send_single
+ *   发回。
+ *
+ * 日志/调试：
+ * - 使用 modtcpbsp.h 中定义的 MODTCP_DBG(level, ...) 宏进行集中控制。
+ *   - level 1: 基本事件/错误
+ *   - level 2: 详细事件（例如帧十六进制转储）
+ * - 在调试时可以把 MODTCP_DEBUG_LEVEL 提高到 2，但生产编译建议保留为 1
+ *   或 0，以避免串口被大量十六进制转储刷屏。
+ *
+ * 内存/性能建议：
+ * - TCP_MAX_SOCK 不要超过目标板和 W5500 的能力（通常 <= 8）；每增加一个
+ *   socket，会增加一定的 RAM（每 socket 的 rxbuf 和状态结构）。
+ * - MB_TCP_ACC_SIZE 控制端口层的累加缓冲大小；设置时请考虑最坏情况下的
+ *   单帧大小与同时缓存的帧数。
+ */
 #include "socket.h"
 #include "stdio.h"
 #include "wizchip_conf.h"

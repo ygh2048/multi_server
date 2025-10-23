@@ -4,6 +4,46 @@
 #include <stdint.h>
 #include <stddef.h>
 
+/*
+ * MOD_TCP_BSP 说明（摘要）
+ *
+ * 这个头文件控制 Modbus/TCP 的 BSP（基于 W5500）的编译时行为。
+ * 项目中提供两种实现模式：
+ *   1) 单连接模式（single connection）—— 上层假设只有一个客户端连接，
+ *      BSP 提供 tcp_srv_single_* 系列接口；端口层（porttcp.c）使用单个
+ *      累加缓冲区来组帧。这种实现节省资源并且在多数 Modbus 从站场景
+ *      下非常适用。
+ *
+ *   2) 多连接模式（multi connection）—— BSP 打开 TCP_MAX_SOCK 个 socket，
+ *      提供 tcp_srv_* 多连接接口，端口层可以为每个 socket 保留一个小累
+ *      加区，允许多个客户端同时连接并发请求。代价是代码/数据占用上升。
+ *
+ * 切换方式（编译时）：
+ *   - 仅需通过条件编译宏控制，在本文件中：
+ *       #define TCP_MULTI_CONNECTION_MODE   // 启用多连接
+ *     或注释该行以使用单连接模式。
+ *   - 切换后需要重新编译固件。
+ *
+ * 重要宏与影响：
+ *   - TCP_MAX_SOCK: 并发 socket 数（多连接模式有效）。W5500 最多 8 个 socket，
+ *     请不要超过芯片/板子资源限制（通常 <= 8）。更大的值会占用更多 RAM。
+ *   - TCP_RX_MAX / MB_TCP_ACC_SIZE: 控制单次/累加缓冲大小。增加会提升能同时
+ *     缓冲/组帧的能力但消耗更多 RAM。
+ *   - MODTCP_DEBUG / MODTCP_DEBUG_LEVEL: 集中控制 BSP/port 的 printf 日志级别（0/1/2）。
+ *
+ * 设计注意事项：
+ *   - 当前实现使用编译时选择（条件编译）来决定代码路径：这是最简单、最省
+ *     资源的做法；如果未来需要运行时切换，可以在 BSP 中添加运行时模式开关和
+ *     统一的转发接口，但会增加代码/数据复杂度。
+ *   - 多连接模式下，上层（modbus port）需要考虑如何把响应发回正确的 socket，
+ *     当前 porttcp.c 使用 s_frame_sock 记录来源 socket（最小侵入方案）。
+ *
+ * 使用示例（默认单连接）：
+ *   - 修改宏使能多连接：在本文件去掉注释 #define TCP_MULTI_CONNECTION_MODE
+ *   - 设置并发数：调整 TCP_MAX_SOCK
+ *   - 重新编译项目
+ */
+
 /* ================= 连接模式选择 ================= */
 /* 注释下一行使用单连接模式，取消注释使用多连接模式 */
 //#define TCP_MULTI_CONNECTION_MODE

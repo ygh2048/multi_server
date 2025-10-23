@@ -13,6 +13,25 @@
 #include "mbport.h"
 #include "mb_user_reg.h"
 
+/*
+ * task_tcp.c - 主任务入口（网络初始化与 Modbus 主循环）
+ *
+ * 说明：
+ * - 本文件演示如何初始化 W5500、启动单连接的 Modbus/TCP 服务并进入
+ *   主循环：
+ *     1) 调用 tcp_srv_single_init() / tcp_srv_single_set_keepalive()
+ *     2) 初始化 FreeModbus（eMBTCPInit / eMBEnable）
+ *     3) 在循环中调用 vMBPortTCPPool() 驱动 TCP 数据读取与组帧，
+ *        然后调用 eMBPoll() 处理 Modbus 请求。
+ * - 日志级别由 `HARDWARE/MOD_TCP_BSP/modtcpbsp.h` 中的 `MODTCP_DEBUG_LEVEL`
+ *   控制。把它设为 1 输出基本事件；设为 2 会输出更详细的周期性状态和
+ *   十六进制帧转储（仅用于调试）。
+ *
+ * 切换单/多连接：
+ * - 若需要切换为多连接，请编辑 `modtcpbsp.h`，去掉 `#define TCP_MULTI_CONNECTION_MODE`
+ *   前的注释并重新编译。运行时不支持动态切换（当前实现为编译时选择）。
+ */
+
 void vMBPortTCPPool(void);
 
 
