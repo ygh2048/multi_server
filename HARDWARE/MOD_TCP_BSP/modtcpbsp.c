@@ -31,7 +31,6 @@ typedef struct {
 } tcp_sock_ctx_t;
 
 
-static tcp_single_ctx_t s_ctx;
 static uint8_t          s_listen_sn = 0;        /* 监听socket固定为0 */
 
 #ifdef TCP_MULTI_CONNECTION_MODE
