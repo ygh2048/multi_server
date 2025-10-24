@@ -1,8 +1,2 @@
-*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\workapp\keil_v5\ARM\ARMCC\Bin'
-Build target 'UCOS-1'
-compiling task_tcp.c...
-linking...
-Program Size: Code=41488 RO-data=1088 RW-data=524 ZI-data=9092  
-FromELF: creating hex file...
-"..\OBJ\UCOS-1.axf" - 0 Error(s), 0 Warning(s).
-Build Time Elapsed:  00:00:02
+Load "..\\OBJ\\UCOS-1.axf" 
+Erase Done.Programming Done.Verify OK.Flash Load finished at 11:50:10

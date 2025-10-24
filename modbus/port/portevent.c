@@ -59,9 +59,9 @@ xMBPortEventGet( eMBEventType * eEvent )
     xEventInQueue = FALSE;
     xEventHappened = TRUE;
   }
-  else					 //这里加入触发机制
-	{
-  	(void)xMBPortTCPPool();
-	}
+  else  /* 鏃犱簨浠舵椂璋冪敤 TCP 杞浠ラ┍鍔ㄥ抚鎻愬彇 */
+  {
+    (void)xMBPortTCPPool();
+  }
   return xEventHappened;
 }

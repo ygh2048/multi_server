@@ -51,9 +51,9 @@
 /* ================= 调试开关（直接 printf 到串口） ================= */
 /* 0: 关闭; 1: 基本日志; 2: 详细日志 */
 #ifndef TCP_MULTI_DEBUG
-#define TCP_MULTI_DEBUG 1
+#define TCP_MULTI_DEBUG 0
 
-#define  TCP_SINGLE_DEBUG 1
+#define  TCP_SINGLE_DEBUG 0
 #endif
 
 #if TCP_MULTI_DEBUG

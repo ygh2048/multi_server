@@ -62,4 +62,4 @@
 ..\obj\task_tcp.o: ..\modbus\port\port.h
 ..\obj\task_tcp.o: ..\modbus\include\mbport.h
 ..\obj\task_tcp.o: ..\modbus\include\mbproto.h
-..\obj\task_tcp.o: ..\HARDWARE\MOD_TCP_BSP\mb_user_reg.h
+..\obj\task_tcp.o: ..\modbus\mb_user_reg.h

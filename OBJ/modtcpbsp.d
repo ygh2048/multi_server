@@ -2,11 +2,11 @@
 ..\obj\modtcpbsp.o: ..\HARDWARE\MOD_TCP_BSP\modtcpbsp.h
 ..\obj\modtcpbsp.o: D:\workapp\keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\modtcpbsp.o: D:\workapp\keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-..\obj\modtcpbsp.o: D:\workapp\keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\modtcpbsp.o: ..\ioLibrary_Driver\Ethernet\socket.h
 ..\obj\modtcpbsp.o: ..\ioLibrary_Driver\Ethernet\wizchip_conf.h
 ..\obj\modtcpbsp.o: ..\ioLibrary_Driver\Ethernet\W5500/w5500.h
 ..\obj\modtcpbsp.o: ..\ioLibrary_Driver\Ethernet\wizchip_conf.h
+..\obj\modtcpbsp.o: D:\workapp\keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\modtcpbsp.o: ..\SYSTEM\sys\sys.h
 ..\obj\modtcpbsp.o: ..\USER\stm32f4xx.h
 ..\obj\modtcpbsp.o: ..\CORE\core_cm4.h

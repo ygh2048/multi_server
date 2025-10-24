@@ -11,7 +11,7 @@
 
 #include "mb.h"
 #include "mbport.h"
-#include "mb_user_reg.h"
+#include "mb_user_reg.h"  /* in modbus/reg/ */
 
 /*
  * task_tcp.c - 主任务入口（网络初始化与 Modbus 主循环）
@@ -64,9 +64,7 @@ void tcp_task(void *pdata)
     uint16_t rx_rd;
     uint32_t current_time;
 
-    printf("W5500 Modbus/TCP Server start\r\n");
-
-    /* --- 初始化部分保持不变 --- */
+    /* --- 初始化部分 --- */
     wizchip_reset();
     delay_ms(10);
     wizchip_initialize();
@@ -77,62 +75,36 @@ void tcp_task(void *pdata)
 
     tcp_srv_single_init(MODBUS_PORT);               
     tcp_srv_single_set_keepalive(10);
-    printf("[TCP] Listening on port %u\r\n", MODBUS_PORT);
 
-    if (eMBTCPInit(MODBUS_PORT) != MB_ENOERR) {
-        printf("[MB] eMBTCPInit failed!\r\n");
+    /* 初始化用户寄存器（LED控制位） */
+    vMBUserRegInit();
+
+    /* 初始化并配置 Modbus TCP */
+    if ((eStatus = eMBTCPInit(MODBUS_PORT)) != MB_ENOERR) {
+        printf("[ERR] Modbus TCP init failed: %d\r\n", eStatus);
         while (1) { delay_ms(1000); }
     }
 
-    if (eMBEnable() != MB_ENOERR) {
-        printf("[MB] eMBEnable failed!\r\n");
+    /* 设置功能码掩码（启用03和06功能码） */
+    if ((eStatus = eMBSetSlaveID(0x01, TRUE, NULL, 0)) != MB_ENOERR) {
+        printf("[ERR] Set slave ID failed: %d\r\n", eStatus);
         while (1) { delay_ms(1000); }
     }
-    printf("[MB] Modbus slave ready on %u\r\n", MODBUS_PORT);
+
+    /* 启用所有支持的功能码 */
+    if ((eStatus = eMBEnable()) != MB_ENOERR) {
+        printf("[ERR] Modbus enable failed: %d\r\n", eStatus);
+        while (1) { delay_ms(1000); }
+    }
 
     /* 主循环 */
     for (;;)
     {
         poll_count++;
 
-    /* 驱动TCP层（被动拉模式）：负责读硬件 socket、append 到累加缓冲并组帧 */
-    vMBPortTCPPool();
-
-        /* 处理Modbus请求 */
+        /* 先主动推进一次 TCP，确保新数据被读取 */
+        vMBPortTCPPool();
         eStatus = eMBPoll();
-
-        /* 每秒输出一次接收到的数据 */
-        current_time = OSTimeGet();
-        /* 每2秒输出一次详细状态 */
-        if (current_time - last_debug_time > 1000) {
-            last_debug_time = current_time;
-            
-            printf("[DEBUG] === Modbus TCP Status ===\r\n");
-            printf("[DEBUG] Poll count: %lu, eMBPoll result: %d\r\n", poll_count, eStatus);
-            printf("[DEBUG] TCP Connected: %s, RX Buffer: %u/%u bytes\r\n", 
-                   tcp_srv_single_is_connected() ? "Yes" : "No",
-                   tcp_srv_single_get_rx_buffer_usage(),
-                   tcp_srv_single_get_rx_buffer_size());
-            
-            /* 输出TCP socket状态 */
-            printf("[DEBUG] Socket state: ");
-            switch(getSn_SR(0)) {
-                case SOCK_CLOSED: printf("CLOSED"); break;
-                case SOCK_INIT: printf("INIT"); break;
-                case SOCK_LISTEN: printf("LISTEN"); break;
-                case SOCK_ESTABLISHED: printf("ESTABLISHED"); break;
-                case SOCK_CLOSE_WAIT: printf("CLOSE_WAIT"); break;
-                default: printf("UNKNOWN(%u)", getSn_SR(0)); break;
-            }
-            printf("\r\n");
-            
-            /* 输出TCP接收缓冲区状态 */
-            rx_rsr = getSn_RX_RSR(0);
-            rx_rd = getSn_RX_RD(0);
-            printf("[DEBUG] TCP HW Buffer: RSR=%u, RD=%u\r\n", rx_rsr, rx_rd);
-            printf("[DEBUG] ============================\r\n");
-        }
-
         delay_ms(1);
     }
 }

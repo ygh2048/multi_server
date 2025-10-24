@@ -1,4 +1,5 @@
-..\obj\mb_user_reg.o: ..\HARDWARE\MOD_TCP_BSP\mb_user_reg.c
+..\obj\mb_user_reg.o: ..\modbus\mb_user_reg.c
+..\obj\mb_user_reg.o: ..\modbus\mb_user_reg.h
 ..\obj\mb_user_reg.o: ..\modbus\include\mb.h
 ..\obj\mb_user_reg.o: ..\modbus\port\port.h
 ..\obj\mb_user_reg.o: ..\SYSTEM\sys\sys.h
@@ -39,7 +40,4 @@
 ..\obj\mb_user_reg.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\mb_user_reg.o: ..\modbus\include\mbport.h
 ..\obj\mb_user_reg.o: ..\modbus\include\mbproto.h
-..\obj\mb_user_reg.o: ..\HARDWARE\MOD_TCP_BSP\mb_user_reg.h
-..\obj\mb_user_reg.o: D:\workapp\keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-..\obj\mb_user_reg.o: D:\workapp\keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\mb_user_reg.o: ..\HARDWARE\LED\led.h

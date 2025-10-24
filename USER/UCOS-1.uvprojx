@@ -887,12 +887,7 @@
             <File>
               <FileName>mb_user_reg.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\HARDWARE\MOD_TCP_BSP\mb_user_reg.c</FilePath>
-            </File>
-            <File>
-              <FileName>mb_user_reg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\HARDWARE\MOD_TCP_BSP\mb_user_reg.h</FilePath>
+              <FilePath>..\modbus\mb_user_reg.c</FilePath>
             </File>
           </Files>
         </Group>
