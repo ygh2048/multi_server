@@ -240,6 +240,10 @@ BOOL xMBTCPPortGetRequest(UCHAR **ppucMBTCPFrame, USHORT *usTCPLength)
 
     /* 标记被取走，允许抽下一帧 */
     s_frame_ready = 0U;
+    /* Diagnostic: print MBAP tid/uid/len so we can confirm the frame handed to stack */
+    TCP_DBG("[MBTCP-SIMPLE] GETREQ TID=%02X%02X UID=%02X LEN=%u\r\n",
+            (unsigned)ucTCPBuf[MB_TCP_TID_H], (unsigned)ucTCPBuf[MB_TCP_TID_L],
+            (unsigned)ucTCPBuf[MB_TCP_UID], (unsigned)usTCPBufLen);
     return TRUE;
 }
 
@@ -251,6 +255,7 @@ BOOL xMBTCPPortSendResponse(const UCHAR *pucMBTCPFrame, USHORT usTCPLength)
     printf("%s SEND %uB\r\n", TCP_DEBUG_PREFIX, (unsigned)usTCPLength);
 #endif
     ret = tcp_srv_single_send(pucMBTCPFrame, usTCPLength);
+    TCP_DBG("[MBTCP-SIMPLE] SEND result=%d\r\n", (int)ret);
     return (ret == 0) ? TRUE : FALSE;
 }
 
